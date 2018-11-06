@@ -1,5 +1,6 @@
 // Angular modules
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -55,6 +56,7 @@ import {
 	imports: [
 		// Angular
 		CommonModule,
+		RouterModule,
 		// Material
 		LayoutModule,
 		MatCardModule,

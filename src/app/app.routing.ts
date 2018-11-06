@@ -10,7 +10,21 @@ const routes: Routes = [
         path: '',
         component: MainLayoutComponent,
         children: [
+            // Default
+            {
+                path: '',
+                redirectTo: 'data-table',
+                pathMatch: 'full'
+            },
+            {   // Lazy load ENVIRONMENT Module
+                path: 'data-table',
+                loadChildren: './components/data-table/data-table.module#DataTableModule'
+            }
         ]
+    },
+    {
+        path: '**',
+        redirectTo: '/data-table'
     }
 ];
 
