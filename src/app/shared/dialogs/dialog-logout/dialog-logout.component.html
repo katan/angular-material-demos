@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>Session logout</h2>
+<mat-dialog-content>
+    <p>
+        Are you sure to close the session?
+    </p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Logout</button>
+</mat-dialog-actions>

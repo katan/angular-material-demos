@@ -4,11 +4,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Material
+import { LayoutModule } from '@angular/cdk/layout';
 import {
 	// Navigation
 	MatMenuModule,
 	MatSidenavModule,
+	MatToolbarModule,
 	// Layout
+	MatListModule,
+	MatCardModule,
 	MatGridListModule,
 	MatExpansionModule,
 	MatTabsModule,
@@ -34,7 +38,34 @@ import {
 	MatPaginatorModule
 } from '@angular/material';
 
+// Own components
+import {
+	MainNavComponent,
+	MainLayoutComponent,
+	FooterComponent,
+	ToolbarComponent,
+	AccountCardComponent
+} from './layouts/index';
+// Dialogs
+import {
+	DialogLogoutComponent
+} from './dialogs/index';
+
 @NgModule({
+	imports: [
+		// Angular
+		CommonModule,
+		// Material
+		LayoutModule,
+		MatCardModule,
+		MatToolbarModule,
+		MatButtonModule,
+		MatSidenavModule,
+		MatIconModule,
+		MatListModule,
+		MatDialogModule,
+		MatMenuModule
+	],
 	exports: [
 		CommonModule,
 		FormsModule,
@@ -45,7 +76,9 @@ import {
 		// Navigation
 		MatMenuModule,
 		MatSidenavModule,
+		MatToolbarModule,
 		// Layout
+		MatCardModule,
 		MatGridListModule,
 		MatExpansionModule,
 		MatTabsModule,
@@ -71,6 +104,16 @@ import {
 		MatPaginatorModule,
 		/* End Material */
 	],
-	declarations: []
+	declarations: [
+		MainNavComponent,
+		MainLayoutComponent,
+		FooterComponent,
+		ToolbarComponent,
+		DialogLogoutComponent,
+		AccountCardComponent
+	],
+	entryComponents: [
+		DialogLogoutComponent
+	]
 })
 export class SharedModule { }

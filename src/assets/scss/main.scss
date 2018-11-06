@@ -1,0 +1,35 @@
+html,
+body {
+    font-family: $available-fonts;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+#main-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 16px 0;
+    background-color: $background-footer;
+
+    div {
+        padding: 0 24px;
+    }
+}
+
+app-toolbar {
+    width: 100%;
+
+    #main-toolbar {
+        position: relative;
+        float: right;
+        right: 16px;
+
+        div {
+            display: inline-block;
+        }
+    }
+}

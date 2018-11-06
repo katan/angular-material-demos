@@ -1,0 +1,19 @@
+button {
+    font-size: 1.1rem;
+    font-weight: 200;
+
+    mat-icon {
+        font-size: 1.6rem;
+        padding-right: 8px;
+    }
+}
+
+.account-header-image {
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://test.atrivity.com/webservice/api/Document/UserImage/2a053ea4-1acc-40b8-ba2b-b99fa6e2e46c");
+}
+
+mat-card {
+    box-shadow: none !important;
+}

@@ -1,0 +1,23 @@
+<button mat-button [matMenuTriggerFor]="useraccount">
+    <mat-icon aria-label="main toolbar user account icon">account_circle</mat-icon>
+    <span class="name">Hi username!</span>
+</button>
+<mat-menu #useraccount="matMenu">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <div mat-card-avatar class="account-header-image"></div>
+            <mat-card-title>Ricard Catalán</mat-card-title>
+            <mat-card-subtitle>Administrator</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            You are working on <br />
+            <b>Environment name</b>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-button>
+                <mat-icon aria-label="main toolbar user account icon">edit</mat-icon>
+                <span>EDIT</span>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</mat-menu>

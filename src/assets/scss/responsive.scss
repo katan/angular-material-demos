@@ -1,0 +1,13 @@
+@media(max-width:767px) {
+
+    /* Hide toolbar text (show only text) */
+    app-toolbar {
+        #main-toolbar {
+            right: 0;
+
+            span.name {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+<div id="main-toolbar">
+    <!-- User Data -->
+    <div id="toolbar-languages">
+        <app-account-card></app-account-card>
+    </div>
+
+    <!-- Languages -->
+    <div id="toolbar-languages">
+        <button mat-button [matMenuTriggerFor]="languages">
+            <mat-icon aria-label="main toolbar languages icon">languages</mat-icon>
+            <span class="name">Languages</span>
+        </button>
+        <mat-menu #languages="matMenu">
+            <button mat-menu-item>English</button>
+            <button mat-menu-item>Spanish</button>
+            <button mat-menu-item>French</button>
+            <button mat-menu-item>Deutch</button>
+            <button mat-menu-item>Italian</button>
+        </mat-menu>
+    </div>
+
+    <!-- logout -->
+    <div id="toolbar-logout">
+        <button mat-button class="button" (click)="openLogoutDialog()">
+            <mat-icon aria-label="main toolbar logout icon">power_settings_new</mat-icon>
+            <span class="name">Logout</span>
+        </button>
+    </div>
+</div>

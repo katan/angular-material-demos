@@ -1,0 +1,1 @@
+export * from './dialog-logout/dialog-logout.component';
