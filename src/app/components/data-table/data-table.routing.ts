@@ -1,5 +1,4 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes } from '@angular/router';
 
 // Layouts
 import { SimpleTableComponent } from '@app/components/data-table/index';
