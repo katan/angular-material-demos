@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Material
@@ -69,7 +70,8 @@ import {
 		MatMenuModule
 	],
 	exports: [
-		CommonModule,
+        CommonModule,
+        HttpClientModule,
 		FormsModule,
 		ReactiveFormsModule,
 		/**

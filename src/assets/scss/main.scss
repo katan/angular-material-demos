@@ -8,6 +8,13 @@ body {
     margin: 0;
 }
 
+#main-content-wrapper {
+    position: relative;
+    height: calc(100% - 116px);
+    overflow: hidden;
+    overflow-y: auto;
+}
+
 #main-footer {
     position: absolute;
     bottom: 0;

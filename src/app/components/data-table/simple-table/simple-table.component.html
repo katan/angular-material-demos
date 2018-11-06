@@ -1,3 +1,28 @@
-<p>
-  simple-table works!
-</p>
+<mat-table [dataSource]="dataSource">
+    <!-- Position Column -->
+    <ng-container matColumnDef="categoryID">
+        <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
+        <mat-cell *matCellDef="let ingredient"> {{ingredient.categoryID}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let ingredient"> {{ingredient.name}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="calories">
+        <mat-header-cell *matHeaderCellDef> Calories </mat-header-cell>
+        <mat-cell *matCellDef="let ingredient"> {{ingredient.calories}} </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="IG">
+        <mat-header-cell *matHeaderCellDef> IG </mat-header-cell>
+        <mat-cell *matCellDef="let ingredient"> {{ingredient.ig}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
