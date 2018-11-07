@@ -18,7 +18,7 @@ ul {
         height: auto;
         max-height: 0;
         overflow: hidden;
-        transition: max-height .5s ease-out;
+        transition: max-height .66s ease-out;
     }
 
     &.submenu>li>mat-list-item {

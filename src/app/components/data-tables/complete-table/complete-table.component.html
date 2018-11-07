@@ -1,0 +1,44 @@
+<div>
+    <mat-form-field appearance="fill">
+        <mat-icon matPrefix>search</mat-icon>
+        <mat-label>Filter by</mat-label>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="name to filter">
+    </mat-form-field>
+
+    <mat-table [dataSource]="dataSource" matSort>
+        <!-- Position Column -->
+        <ng-container matColumnDef="num">
+            <mat-header-cell *matHeaderCellDef> Num. </mat-header-cell>
+            <mat-cell *matCellDef="let ingredient;  let i = index"> {{i+1}} </mat-cell>
+        </ng-container>
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="categoryID">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Category </mat-header-cell>
+            <mat-cell *matCellDef="let ingredient"> {{ingredient.categoryID}} </mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+            <mat-cell *matCellDef="let ingredient"> {{ingredient.name}} </mat-cell>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="calories">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Calories </mat-header-cell>
+            <mat-cell *matCellDef="let ingredient"> {{ingredient.calories}} </mat-cell>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="IG">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> IG </mat-header-cell>
+            <mat-cell *matCellDef="let ingredient"> {{ingredient.ig}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+    <mat-paginator [pageSizeOptions]="[20, 50]" showFirstLastButtons></mat-paginator>
+</div>

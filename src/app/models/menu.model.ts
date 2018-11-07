@@ -27,6 +27,10 @@ export const MENU_ROUTES: MenuRoute[] = [
             {
                 path: '/data-tables/pagination-table',
                 title: 'Pagination table'
+            },
+            {
+                path: '/data-tables/complete-table',
+                title: 'Complete table'
             }
         ]
     },

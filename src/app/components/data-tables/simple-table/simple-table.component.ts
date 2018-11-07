@@ -5,8 +5,7 @@ import { Ingredient } from '@app/models/index';
 
 @Component({
     selector: 'app-simple-table',
-    templateUrl: './simple-table.component.html',
-    styleUrls: ['./simple-table.component.scss']
+    templateUrl: './simple-table.component.html'
 })
 export class SimpleTableComponent implements OnInit {
     public dataSource: Array<Ingredient>;
