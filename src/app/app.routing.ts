@@ -13,18 +13,18 @@ const routes: Routes = [
             // Default
             {
                 path: '',
-                redirectTo: 'data-table',
+                redirectTo: 'data-tables',
                 pathMatch: 'full'
             },
             {   // Lazy load ENVIRONMENT Module
-                path: 'data-table',
-                loadChildren: './components/data-table/data-table.module#DataTableModule'
+                path: 'data-tables',
+                loadChildren: './components/data-tables/data-tables.module#DataTablesModule'
             }
         ]
     },
     {
         path: '**',
-        redirectTo: '/data-table'
+        redirectTo: '/data-tables'
     }
 ];
 

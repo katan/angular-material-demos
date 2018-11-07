@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
 
 // Layouts
-import { SimpleTableComponent } from '@app/components/data-table/index';
+import { SimpleTableComponent } from '@app/components/data-tables/index';
 // Components
 
-export const DataTableRouting: Routes = [
+export const DataTablesRouting: Routes = [
     {
         path: '',
         children: [

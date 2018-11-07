@@ -27,6 +27,14 @@ body {
     }
 }
 
+.sidenav-container {
+    height: 100%;
+}
+
+.sidenav {
+    width: 250px;
+}
+
 app-toolbar {
     width: 100%;
 
@@ -37,6 +45,16 @@ app-toolbar {
 
         div {
             display: inline-block;
+        }
+
+        button {
+            font-size: 1.1rem;
+            font-weight: 200;
+
+            mat-icon {
+                font-size: 1.6rem;
+                padding-right: 8px;
+            }
         }
     }
 }

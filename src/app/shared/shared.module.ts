@@ -52,6 +52,10 @@ import {
 import {
 	DialogLogoutComponent
 } from './dialogs/index';
+import { SidenavComponent } from './layouts/sidenav/sidenav.component';
+import { LanguageDropdownComponent } from './layouts/toolbar/language-dropdown/language-dropdown.component';
+import { LogoutButtonComponent } from './layouts/toolbar/logout-button/logout-button.component';
+import { MenuComponent } from './layouts/sidenav/menu/menu.component';
 
 @NgModule({
 	imports: [
@@ -70,8 +74,8 @@ import {
 		MatMenuModule
 	],
 	exports: [
-        CommonModule,
-        HttpClientModule,
+		CommonModule,
+		HttpClientModule,
 		FormsModule,
 		ReactiveFormsModule,
 		/**
@@ -114,7 +118,11 @@ import {
 		FooterComponent,
 		ToolbarComponent,
 		DialogLogoutComponent,
-		AccountCardComponent
+		AccountCardComponent,
+		SidenavComponent,
+		LanguageDropdownComponent,
+		LogoutButtonComponent,
+		MenuComponent
 	],
 	entryComponents: [
 		DialogLogoutComponent

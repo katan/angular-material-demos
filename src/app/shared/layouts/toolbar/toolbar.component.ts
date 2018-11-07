@@ -1,34 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material';
-
-import { DialogLogoutComponent } from '@app/shared/dialogs/dialog-logout/dialog-logout.component';
+import { Component, Input } from '@angular/core';
+import { MatSidenav } from '@angular/material';
 
 @Component({
     selector: 'app-toolbar',
-    templateUrl: './toolbar.component.html',
-    styleUrls: ['./toolbar.component.scss']
+    templateUrl: './toolbar.component.html'
 })
-export class ToolbarComponent implements OnInit {
+export class ToolbarComponent {
+    @Input() drawer: MatSidenav;
 
-    constructor(private dialog: MatDialog) { }
+    constructor() { }
 
-    ngOnInit() {
-    }
-
-    public openLogoutDialog(): void {
-        const logoutDialog = this.dialog.open(DialogLogoutComponent, {
-            width: '300px'
-        });
-
-        logoutDialog.afterClosed().subscribe(result => {
-            if (result) {
-                console.log('Call a session service to logout');
-            }
-        });
-
-        // dialogRef.afterClosed().subscribe(result => {
-        //     console.log('The dialog was closed');
-        //     this.animal = result;
-        // })
-    }
 }
