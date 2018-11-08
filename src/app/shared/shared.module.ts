@@ -25,6 +25,7 @@ import {
 	MatCheckboxModule,
 	MatRadioModule,
 	MatDatepickerModule,
+	MatNativeDateModule,
 	MatSlideToggleModule,
 	// Buttons & indicators
 	MatButtonModule,
@@ -97,6 +98,7 @@ import { MenuComponent } from './layouts/sidenav/menu/menu.component';
 		MatCheckboxModule,
 		MatRadioModule,
 		MatDatepickerModule,
+		MatNativeDateModule,
 		MatSlideToggleModule,
 		// Buttons & indicators
 		MatButtonModule,

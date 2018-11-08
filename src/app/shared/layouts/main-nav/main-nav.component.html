@@ -1,16 +1,17 @@
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #drawer class="sidenav" fixedInViewport="false " [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-        [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
+        [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)" [class.closed]="!isOpened"
+        (mouseover)="!toggleSideMenu && drawer.open()" (mouseout)="!toggleSideMenu && drawer.close()">
 
         <!-- sidenav -->
         <app-sidenav></app-sidenav>
 
     </mat-sidenav>
-    <mat-sidenav-content>
+    <mat-sidenav-content [class.closed]="!isOpened">
         <mat-toolbar color="primary">
 
             <!-- toolbar options -->
-            <app-toolbar [drawer]="drawer"></app-toolbar>
+            <app-toolbar [toggleMenu]="toggleSideMenu"></app-toolbar>
 
         </mat-toolbar>
 

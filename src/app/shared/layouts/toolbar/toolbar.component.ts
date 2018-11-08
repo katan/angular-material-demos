@@ -6,8 +6,12 @@ import { MatSidenav } from '@angular/material';
     templateUrl: './toolbar.component.html'
 })
 export class ToolbarComponent {
-    @Input() drawer: MatSidenav;
+    @Input() toggleMenu: boolean;
 
     constructor() { }
 
+    onToggleMenu(): void {
+        console.log(this.toggleMenu)
+        this.toggleMenu = !this.toggleMenu;
+    }
 }

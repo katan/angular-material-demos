@@ -16,9 +16,13 @@ const routes: Routes = [
                 redirectTo: 'data-tables',
                 pathMatch: 'full'
             },
-            {   // Lazy load ENVIRONMENT Module
+            {   // Lazy load DataTables Module
                 path: 'data-tables',
                 loadChildren: './components/data-tables/data-tables.module#DataTablesModule'
+            },
+            {   // Lazy load Forms Module
+                path: 'forms',
+                loadChildren: './components/forms/forms.module#FormsModule'
             }
         ]
     },

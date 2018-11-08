@@ -32,7 +32,13 @@ body {
 }
 
 .sidenav {
-    width: 250px;
+    width: 280px;
+}
+
+mat-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 app-toolbar {

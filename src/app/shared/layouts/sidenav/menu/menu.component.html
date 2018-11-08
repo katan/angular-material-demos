@@ -3,18 +3,20 @@
     <li *ngFor="let menu of menuItems" [class.active]="showMenu === menu.path">
         <mat-list-item *ngIf="!menu.submenu" [routerLink]="menu.path">
             <mat-icon mat-list-icon *ngIf="menu.icon">{{ menu.icon }}</mat-icon>
-            {{ menu.title }}
+            <span>{{ menu.title }}</span>
         </mat-list-item>
 
-        <mat-list-item *ngIf="menu.submenu && menu.submenu.length > 0" (click)="toggleMenu(menu.title)" class="submenu-arrow">
+        <mat-list-item *ngIf="menu.submenu && menu.submenu.length > 0" (click)="toggleMenu(menu.path)" class="submenu-arrow">
             <mat-icon mat-list-icon *ngIf="menu.icon">{{ menu.icon }}</mat-icon>
-            {{ menu.title }}
+            <span>{{ menu.title }}</span>
         </mat-list-item>
 
         <!-- submenu -->
         <ul *ngIf="menu.submenu && menu.submenu.length > 0" class="submenu">
-            <li *ngFor="let submenu of menu.submenu">
-                <mat-list-item [routerLink]="submenu.path">{{ submenu.title }}</mat-list-item>
+            <li *ngFor="let submenu of menu.submenu" [class.active]="activeSubmenu === submenu.path">
+                <mat-list-item (click)="toggleMenu(submenu.path, true)" [routerLink]="submenu.path">
+                    <span>{{ submenu.title }}</span>
+                </mat-list-item>
             </li>
         </ul>
     </li>

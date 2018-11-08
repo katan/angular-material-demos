@@ -10,6 +10,9 @@
 // Import material icons
 @import 'material-design-icons/iconfont/material-icons.css';
 
+// Import material styles
+@import '@material/layout-grid/dist/mdc.layout-grid.min.css';
+
 // import default theme
 @import './themes/default.scss';
 

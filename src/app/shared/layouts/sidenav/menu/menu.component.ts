@@ -9,6 +9,7 @@ import { MenuRoute, MENU_ROUTES } from '@app/models/index';
 })
 export class MenuComponent {
     public showMenu: string;
+    public activeSubmenu: string;
     public menuItems: MenuRoute[];
 
     constructor() {
@@ -16,12 +17,19 @@ export class MenuComponent {
         this.menuItems = MENU_ROUTES;
     }
 
-    public toggleMenu(element): void {
-        element = element.toLocaleLowerCase().replace(' ', '-');
-        if (element === this.showMenu) {
-            this.showMenu = '0';
+    public toggleMenu(element, hasSubmenu): void {
+        if (hasSubmenu) {
+            if (element === this.showMenu) {
+                this.activeSubmenu = '0';
+            } else {
+                this.activeSubmenu = element;
+            }
         } else {
-            this.showMenu = element;
+            if (element === this.showMenu) {
+                this.showMenu = '0';
+            } else {
+                this.showMenu = element;
+            }
         }
     }
 }

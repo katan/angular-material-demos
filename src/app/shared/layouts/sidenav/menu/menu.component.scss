@@ -3,14 +3,46 @@ ul {
     padding: 0;
     list-style: none;
 
+    li {
+        mat-list-item {
+            width: 88%;
+            border-radius: 5px;
+            height: 45px;
+            margin: 8px 0 8px 6%;
+            font-weight: 600;
+        }
+
+        mat-icon {
+            margin: 0 12px 0 -8px;
+        }
+    }
+
     li.active {
         &>mat-list-item {
-            background: #c4d48f
+            background: #c2d9ff;
+            color: #203b94;
         }
 
         ul.submenu {
             height: auto;
             max-height: 500px;
+
+            li>mat-list-item {
+                font-weight: 400;
+                height: 40px;
+
+                span {
+                    padding-left: 12%;
+                }
+            }
+
+            li.active {
+                &>mat-list-item {
+                    background: none;
+                    font-weight: 600;
+                    color: #203b94;
+                }
+            }
         }
     }
 
@@ -19,11 +51,6 @@ ul {
         max-height: 0;
         overflow: hidden;
         transition: max-height .66s ease-out;
-    }
-
-    &.submenu>li>mat-list-item {
-        width: auto;
-        padding: 0 0 0 32px;
     }
 }
 
