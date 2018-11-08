@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit, EventEmitter } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -11,6 +11,7 @@ import { MatSidenav } from '@angular/material';
 export class MainNavComponent implements OnInit {
     public isOpened: boolean;
     public toggleSideMenu: boolean;
+    public toggleSideMenu$: EventEmitter<boolean>;
 
     @ViewChild('drawer') sideNav: MatSidenav;
 
@@ -22,35 +23,20 @@ export class MainNavComponent implements OnInit {
     constructor(private breakpointObserver: BreakpointObserver) {
         this.isOpened = false;
         this.toggleSideMenu = false;
+        this.toggleSideMenu$ = new EventEmitter(this.toggleSideMenu);
     }
 
     ngOnInit(): void {
-        //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-        //Add 'implements OnInit' to the class.
         this.sideNav.openedStart.subscribe(
             (() => this.isOpened = true)
         )
+
         this.sideNav.openedChange.subscribe(
-            (res => {
-                this.isOpened = res
-                console.log(this.toggleSideMenu);
-            })
+            (res => this.isOpened = res)
         );
 
+        this.toggleSideMenu$.subscribe(
+            (res => this.toggleSideMenu = res)
+        );
     }
 }
-
-/*
-@Input() openedChange: EventEmitter<any>;
-
-constructor() {
-    this.isOpened = true;
-}
-
-
-ngOnInit(): void {
-    this.openedChange.subscribe(
-        (res => this.isOpened = res)
-    );
-}
-*/

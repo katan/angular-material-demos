@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter } from '@angular/core';
 import { MatSidenav } from '@angular/material';
 
 @Component({
@@ -6,12 +6,15 @@ import { MatSidenav } from '@angular/material';
     templateUrl: './toolbar.component.html'
 })
 export class ToolbarComponent {
-    @Input() toggleMenu: boolean;
+    private toggleMenu: boolean;
+    @Input() toggleMenu$: EventEmitter<boolean>;
+    @Input() sidenav: MatSidenav;
 
     constructor() { }
 
     onToggleMenu(): void {
-        console.log(this.toggleMenu)
         this.toggleMenu = !this.toggleMenu;
+        this.toggleMenu$.emit(this.toggleMenu);
+        this.sidenav.toggle();
     }
 }
