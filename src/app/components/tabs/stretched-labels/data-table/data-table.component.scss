@@ -1,0 +1,57 @@
+div.options-wrapper {
+    padding: 16px 8px 0 24px;
+
+    mat-form-field.filter {
+        width: 50%;
+
+        mat-icon {
+            font-size: 2.2rem;
+            margin-right: 6px;
+        }
+    }
+
+    div.actions {
+        margin-top: 4px;
+        float: right;
+
+        button[mat-button] {
+            line-height: 3rem;
+
+            mat-icon {
+                width: auto;
+                font-size: 2rem;
+                line-height: 1.5rem;
+                color: #444444;
+            }
+        }
+    }
+}
+
+
+// Overwrite material design classes
+/deep/ .mat-tooltip {
+    font-size: .85rem;
+}
+
+/deep/ .mat-tab-label {
+    height: 64px !important;
+    font-size: 1rem;
+
+    &.mat-tab-label-active {
+        font-weight: 600;
+    }
+}
+
+/deep/ mat-header-cell {
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    color: #333333 !important;
+}
+
+/deep/ .mat-menu-content {
+    padding: 0 !important;
+
+    .mat-nav-list {
+        padding: 0 !important;
+    }
+}

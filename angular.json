@@ -48,17 +48,17 @@
                             "buildOptimizer": true,
                             "budgets": [{
                                     "type": "bundle",
-                                    "name": "vendor",
+                                    "name": "VENDOR",
                                     "baseline": "768kb",
                                     "maximumWarning": "64kb",
                                     "maximumError": "128kb"
                                 },
                                 {
                                     "type": "initial",
-                                    "name": "initial",
-                                    "baseline": "768kb",
-                                    "maximumWarning": "128kb",
-                                    "maximumError": "256kb"
+                                    "name": "START",
+                                    "baseline": "1024kb",
+                                    "maximumWarning": "64kb",
+                                    "maximumError": "128kb"
                                 }
                             ]
                         }

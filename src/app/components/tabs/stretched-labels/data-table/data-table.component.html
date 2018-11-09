@@ -1,0 +1,112 @@
+<div class="content">
+    <!--  -->
+    <div>
+        <div class="options-wrapper">
+            <!-- filter -->
+            <mat-form-field class="filter">
+                <mat-icon matPrefix>search</mat-icon>
+                <mat-label>Filter by</mat-label>
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="name to filter">
+            </mat-form-field>
+
+            <!-- action icons -->
+            <div class="actions">
+                <!--  -->
+                <button mat-button class="button" matTooltip="Add something">
+                    <mat-icon aria-label="main toolbar logout icon">add_circle</mat-icon>
+                </button>
+
+                <button mat-button class="button" matTooltip="Refresh data table">
+                    <mat-icon aria-label="main toolbar logout icon">refresh</mat-icon>
+                </button>
+
+                <button mat-button class="button" matTooltip="Import data">
+                    <mat-icon aria-label="main toolbar logout icon">cloud_upload</mat-icon>
+                </button>
+
+                <button mat-button class="button" [matMenuTriggerFor]="options" matTooltip="more">
+                    <mat-icon aria-label="main toolbar logout icon">more_vert</mat-icon>
+                </button>
+                <mat-menu #options="matMenu">
+                    <mat-nav-list>
+                        <mat-list-item>
+                            <span>Show all</span>
+                        </mat-list-item>
+
+                        <mat-divider></mat-divider>
+
+                        <mat-list-item>
+                            <span>Assign to the game</span>
+                        </mat-list-item>
+
+                        <button mat-menu-item [matMenuTriggerFor]="groupList">Assign to group</button>
+
+                        <mat-divider></mat-divider>
+
+                        <mat-list-item>
+                            <span>Send invitation</span>
+                        </mat-list-item>
+                    </mat-nav-list>
+                </mat-menu>
+
+                <!-- Group list -->
+                <mat-menu #groupList="matMenu">
+                    <button mat-menu-item>Group A</button>
+                    <button mat-menu-item>Group B</button>
+                    <button mat-menu-item>Group C</button>
+                </mat-menu>
+            </div>
+        </div>
+
+        <mat-table [dataSource]="dataSource" matSort>
+            <!-- Checkbox Column -->
+            <ng-container matColumnDef="select">
+                <mat-header-cell *matHeaderCellDef>
+                    <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()">
+                    </mat-checkbox>
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                    <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+                        [checked]="selection.isSelected(row)">
+                    </mat-checkbox>
+                </mat-cell>
+            </ng-container>
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="num">
+                <mat-header-cell *matHeaderCellDef> Num. </mat-header-cell>
+                <mat-cell *matCellDef="let ingredient;  let i = index"> {{i+1}} </mat-cell>
+            </ng-container>
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="categoryID">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Category </mat-header-cell>
+                <mat-cell *matCellDef="let ingredient"> {{ingredient.categoryID}} </mat-cell>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+                <mat-cell *matCellDef="let ingredient"> {{ingredient.name}} </mat-cell>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="calories">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Calories </mat-header-cell>
+                <mat-cell *matCellDef="let ingredient"> {{ingredient.calories}} </mat-cell>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="IG">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> IG </mat-header-cell>
+                <mat-cell *matCellDef="let ingredient"> {{ingredient.ig}} </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+
+        <mat-paginator [pageSizeOptions]="[10, 20, 50]" showFirstLastButtons></mat-paginator>
+    </div>
+</div>

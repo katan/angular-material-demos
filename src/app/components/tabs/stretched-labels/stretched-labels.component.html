@@ -1,0 +1,108 @@
+<div class="tab-group">
+    <h2>Stretched labels</h2>
+    <mat-tab-group mat-stretch-tabs dynamicHeight [selectedIndex]="currentTabIndex" (selectedIndexChange)="changeTabIndex($event)"
+        class="example-stretched-tabs mat-elevation-z4">
+        <mat-tab label="Settings">
+            <app-tabs-form></app-tabs-form>
+
+            <mat-divider></mat-divider>
+            <div class="footer">
+                <span class="fill-space"></span>
+                <button mat-flat-button color="primary" (click)="changeTabIndex(currentTabIndex+1)">
+                    <span>Next</span>
+                </button>
+            </div>
+        </mat-tab>
+
+        <mat-tab label="Language options">
+
+            <mat-divider></mat-divider>
+            <div class="footer">
+                <button mat-flat-button (click)="changeTabIndex(currentTabIndex-1)">
+                    <span>Previous</span>
+                </button>
+                <span class="fill-space"></span>
+                <button mat-flat-button color="primary" (click)="changeTabIndex(currentTabIndex+1)">
+                    <span>Next</span>
+                </button>
+            </div>
+        </mat-tab>
+
+        <mat-tab label="Players">
+            <app-tabs-data-table></app-tabs-data-table>
+
+            <mat-divider></mat-divider>
+            <div class="footer">
+                <button mat-flat-button (click)="changeTabIndex(currentTabIndex-1)">
+                    <span>Previous</span>
+                </button>
+                <span class="fill-space"></span>
+                <button mat-flat-button color="primary" (click)="changeTabIndex(currentTabIndex+1)">
+                    <span>Next</span>
+                </button>
+            </div>
+        </mat-tab>
+
+        <mat-tab label="Teams">
+            <app-tabs-data-table></app-tabs-data-table>
+
+            <mat-divider></mat-divider>
+            <div class="footer">
+                <button mat-flat-button (click)="changeTabIndex(currentTabIndex-1)">
+                    <span>Previous</span>
+                </button>
+                <span class="fill-space"></span>
+                <button mat-flat-button color="primary" (click)="changeTabIndex(currentTabIndex+1)">
+                    <span>Next</span>
+                </button>
+            </div>
+        </mat-tab>
+
+        <mat-tab label="Questions">
+            <app-tabs-data-table></app-tabs-data-table>
+
+            <mat-divider></mat-divider>
+            <div class="footer">
+                <button mat-flat-button (click)="changeTabIndex(currentTabIndex-1)">
+                    <span>Previous</span>
+                </button>
+                <span class="fill-space"></span>
+                <button mat-flat-button color="primary" (click)="changeTabIndex(currentTabIndex+1)">
+                    <span>Next</span>
+                </button>
+            </div>
+        </mat-tab>
+
+        <mat-tab label="Awards">
+            <app-tabs-data-table></app-tabs-data-table>
+
+            <mat-divider></mat-divider>
+            <div class="footer">
+                <button mat-flat-button (click)="changeTabIndex(currentTabIndex-1)">
+                    <span>Previous</span>
+                </button>
+                <span class="fill-space"></span>
+                <button mat-flat-button color="primary" (click)="changeTabIndex(currentTabIndex+1)">
+                    <span>Next</span>
+                </button>
+            </div>
+        </mat-tab>
+
+        <mat-tab label="Integrations">
+            <div class="content">
+                END
+            </div>
+
+            <mat-divider></mat-divider>
+            <div class="footer">
+                <button mat-flat-button (click)="changeTabIndex(currentTabIndex-1)">
+                    <span>Previous</span>
+                </button>
+                <span class="fill-space"></span>
+                <button mat-flat-button color="primary">
+                    <span>End</span>
+                </button>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>

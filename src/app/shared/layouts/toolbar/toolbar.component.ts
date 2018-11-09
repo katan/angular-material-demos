@@ -7,14 +7,17 @@ import { MatSidenav } from '@angular/material';
 })
 export class ToolbarComponent {
     private toggleMenu: boolean;
-    @Input() toggleMenu$: EventEmitter<boolean>;
+    @Input() toggleMenu$: EventEmitter<boolean> | boolean;
     @Input() sidenav: MatSidenav;
 
     constructor() { }
 
     onToggleMenu(): void {
         this.toggleMenu = !this.toggleMenu;
-        this.toggleMenu$.emit(this.toggleMenu);
         this.sidenav.toggle();
+
+        if (this.toggleMenu$ instanceof EventEmitter) {
+            this.toggleMenu$.emit(this.toggleMenu);
+        }
     }
 }

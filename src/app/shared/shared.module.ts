@@ -18,7 +18,6 @@ import {
 	MatGridListModule,
 	MatExpansionModule,
 	MatTabsModule,
-	MatStepperModule,
 	// Form Controls
 	MatInputModule,
 	MatSelectModule,
@@ -87,11 +86,11 @@ import { MenuComponent } from './layouts/sidenav/menu/menu.component';
 		MatSidenavModule,
 		MatToolbarModule,
 		// Layout
+		MatListModule,
 		MatCardModule,
 		MatGridListModule,
 		MatExpansionModule,
 		MatTabsModule,
-		MatStepperModule,
 		// Form Controls
 		MatInputModule,
 		MatSelectModule,

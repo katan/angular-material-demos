@@ -1,0 +1,25 @@
+div.tab-group {
+    padding: 24px 36px 36px;
+
+    h2 {
+        font-weight: 400;
+        margin-top: 0;
+    }
+
+    mat-tab-group {
+        border-radius: 4px;
+        background-color: #ffffff;
+
+        div.footer {
+            display: flex;
+            padding: 16px 32px;
+
+            .fill-space {
+                // This fills the remaining space, by using flexbox.
+                // Every toolbar row uses a flexbox row layout.
+                flex: 1 1 auto;
+            }
+        }
+    }
+
+}

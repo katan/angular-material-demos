@@ -1,17 +1,17 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #drawer class="sidenav" fixedInViewport="false " [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-        [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)" [class.closed]="!isOpened"
-        (mouseover)="toggleSideMenu && drawer.open()" (mouseout)="toggleSideMenu && drawer.close()">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport="true " [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)" [class.closed]="hasMiniSidenav && !isOpened"
+        (mouseover)="(hasMiniSidenav && hasToggleMiniSidenav) && toggleSideMenu && drawer.open()" (mouseout)="(hasToggleMiniSidenav && toggleSideMenu) && drawer.close()">
 
         <!-- sidenav -->
         <app-sidenav></app-sidenav>
 
     </mat-sidenav>
-    <mat-sidenav-content [class.closed]="!isOpened">
+    <mat-sidenav-content [class.closed]="hasMiniSidenav && !isOpened">
         <mat-toolbar color="primary">
 
             <!-- toolbar options -->
-            <app-toolbar [sidenav]="drawer" [toggleMenu$]="toggleSideMenu$"></app-toolbar>
+            <app-toolbar [sidenav]="drawer" [toggleMenu$]="hasMiniSidenav && toggleSideMenu$"></app-toolbar>
 
         </mat-toolbar>
 

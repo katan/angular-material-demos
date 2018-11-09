@@ -48,5 +48,16 @@ export const MENU_ROUTES: MenuRoute[] = [
                 title: 'Validation forms'
             }
         ]
+    },
+    {
+        path: 'tabs',
+        title: 'tabs',
+        icon: 'tab',
+        submenu: [
+            {
+                path: '/tabs/stretched-labels',
+                title: 'Stretched labels'
+            }
+        ]
     }
 ];

@@ -23,6 +23,10 @@ const routes: Routes = [
             {   // Lazy load Forms Module
                 path: 'forms',
                 loadChildren: './components/forms/forms.module#FormsModule'
+            },
+            {   // Lazy load Forms Module
+                path: 'tabs',
+                loadChildren: './components/tabs/tabs.module#TabsModule'
             }
         ]
     },

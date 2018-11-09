@@ -8,7 +8,8 @@
 @include mat-core();
 
 // Import material icons
-@import 'material-design-icons/iconfont/material-icons.css';
+// from: https://jossef.github.io/material-design-icons-iconfont/
+@import 'material-design-icons-iconfont/dist/material-design-icons.css';
 
 // Import material styles
 @import '@material/layout-grid/dist/mdc.layout-grid.min.css';
