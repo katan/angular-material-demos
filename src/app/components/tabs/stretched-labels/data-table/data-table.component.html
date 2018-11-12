@@ -12,30 +12,58 @@
             <!-- action icons -->
             <div class="actions">
                 <!--  -->
-                <button mat-button class="button" matTooltip="Add something">
+                <button *ngIf="!isMobile" mat-button class="button" matTooltip="Add something">
                     <mat-icon aria-label="main toolbar logout icon">add_circle</mat-icon>
                 </button>
 
-                <button mat-button class="button" matTooltip="Refresh data table">
+                <button *ngIf="!isMobile" mat-button class="button" matTooltip="Refresh data table">
                     <mat-icon aria-label="main toolbar logout icon">refresh</mat-icon>
                 </button>
 
-                <button mat-button class="button" matTooltip="Import data">
+                <button *ngIf="!isMobile" mat-button class="button" matTooltip="Import data">
                     <mat-icon aria-label="main toolbar logout icon">cloud_upload</mat-icon>
+                </button>
+
+                <button *ngIf="!isMobile" mat-button class="button" matTooltip="Export data">
+                    <mat-icon aria-label="main toolbar logout icon">cloud_download</mat-icon>
                 </button>
 
                 <button mat-button class="button" [matMenuTriggerFor]="options" matTooltip="more">
                     <mat-icon aria-label="main toolbar logout icon">more_vert</mat-icon>
                 </button>
+
                 <mat-menu #options="matMenu">
                     <mat-nav-list>
+                        <div *ngIf="isMobile" class="mobile">
+                            <mat-list-item>
+                                <mat-icon aria-label="main toolbar logout icon">add_circle</mat-icon>
+                                <span>Add something</span>
+                            </mat-list-item>
+
+                            <mat-list-item>
+                                <mat-icon aria-label="main toolbar logout icon">refresh</mat-icon>
+                                <span>Refresh data table</span>
+                            </mat-list-item>
+
+                            <mat-list-item>
+                                <mat-icon aria-label="main toolbar logout icon">cloud_upload</mat-icon>
+                                <span>Import data</span>
+                            </mat-list-item>
+
+                            <mat-list-item>
+                                <mat-icon aria-label="main toolbar logout icon">cloud_download</mat-icon>
+                                <span>Export data</span>
+                            </mat-list-item>
+                            <mat-divider></mat-divider>
+                        </div>
+
                         <mat-list-item>
                             <span>Show all</span>
                         </mat-list-item>
 
                         <mat-divider></mat-divider>
 
-                        <mat-list-item>
+                        <mat-list-item (click)="assignTo()">
                             <span>Assign to the game</span>
                         </mat-list-item>
 
@@ -50,7 +78,7 @@
                 </mat-menu>
 
                 <!-- Group list -->
-                <mat-menu #groupList="matMenu">
+                <mat-menu #groupList="matMenu" (change)="assignTo()">
                     <button mat-menu-item>Group A</button>
                     <button mat-menu-item>Group B</button>
                     <button mat-menu-item>Group C</button>

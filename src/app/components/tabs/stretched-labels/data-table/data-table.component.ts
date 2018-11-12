@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SelectionModel } from '@angular/cdk/collections';
-import { MatSort, MatPaginator, MatTableDataSource } from '@angular/material';
+import { MatSort, MatPaginator, MatTableDataSource, MatSnackBar } from '@angular/material';
 
 import { Ingredient } from '@app/models/index';
+import { DeviceHelper } from '@app/core/helpers/index'
+import { AssignToComponent } from '@app/shared/toasts/index';
 
 @Component({
     selector: 'app-tabs-data-table',
@@ -13,12 +15,14 @@ import { Ingredient } from '@app/models/index';
 export class DataTableComponent implements OnInit {
     public dataSource: MatTableDataSource<Ingredient>;
     public displayedColumns: string[];
+    public isMobile: boolean;
     selection = new SelectionModel<Ingredient>(true, []);
 
     @ViewChild(MatSort) sort: MatSort;
     @ViewChild(MatPaginator) paginator: MatPaginator;
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, private toast: MatSnackBar) {
+        this.isMobile = DeviceHelper.isMobile();
         this.displayedColumns = ['select', 'num', 'categoryID', 'name', 'calories', 'IG'];
     }
 
@@ -47,5 +51,12 @@ export class DataTableComponent implements OnInit {
         this.isAllSelected() ?
             this.selection.clear() :
             this.dataSource.data.forEach(row => this.selection.select(row));
+    }
+
+    public assignTo() {
+        this.toast.openFromComponent(AssignToComponent, {
+            duration: 5000,
+            data: this.selection
+        });
     }
 }

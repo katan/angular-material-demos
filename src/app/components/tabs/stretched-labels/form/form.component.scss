@@ -3,9 +3,21 @@ h3 {
 }
 
 section {
-    padding: 0 16px;
+    padding: 12px 24px 24px;
+    background-color: #f3f3f3;
+    border-radius: 6px;
 
     mat-form-field {
         width: 100%;
     }
+}
+
+div.slide-toggle {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 24px;
+}
+
+/deep/ .mat-checkbox-layout {
+    white-space: inherit !important;
 }

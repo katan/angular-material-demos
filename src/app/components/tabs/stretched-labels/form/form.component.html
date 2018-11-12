@@ -1,28 +1,79 @@
 <form>
     <div class="mdc-layout-grid">
+        <div class="slide-toggle">
+            <mat-slide-toggle color="primary" [checked]="isAdvancedMode" (change)="isAdvancedMode = !isAdvancedMode">
+                Advanced mode
+            </mat-slide-toggle>
+        </div>
         <div class="mdc-layout-grid__inner">
             <!-- nam, last name ... -->
             <div class="mdc-layout-grid__cell">
                 <section>
                     <h3>General settings</h3>
                     <mat-form-field>
-                        <input matInput placeholder="Your name">
-                        <mat-icon matSuffix>face</mat-icon>
+                        <input matInput placeholder="Game name">
                     </mat-form-field>
 
                     <mat-form-field>
-                        <input matInput placeholder="Lastname">
-                        <mat-icon matSuffix>face</mat-icon>
+                        <input matInput [matDatepicker]="startGame" placeholder="Start game">
+                        <mat-datepicker-toggle matSuffix [for]="startGame"></mat-datepicker-toggle>
+                        <mat-datepicker #startGame></mat-datepicker>
+
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="endGame" placeholder="End game">
+                        <mat-datepicker-toggle matSuffix [for]="endGame"></mat-datepicker-toggle>
+                        <mat-datepicker #endGame></mat-datepicker>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-select placeholder="Game status" disableRipple>
+                            <mat-option value="1">Inactive</mat-option>
+                            <mat-option value="2">Active</mat-option>
+                            <mat-option value="3">Archived</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-select placeholder="Game type" disableRipple>
+                            <mat-option value="1">Standard</mat-option>
+                            <mat-option value="2">Live Game</mat-option>
+                            <mat-option value="3">Onboarding</mat-option>
+                            <mat-option value="4">Long</mat-option>
+                            <mat-option value="5">Assessment</mat-option>
+                            <mat-option value="6">Permanent</mat-option>
+                        </mat-select>
                     </mat-form-field>
                 </section>
-            </div>
-
-            <div class="mdc-layout-grid__cell">
-                <section>
-                    <h3>Scoring system</h3>
+                <section *ngIf="isAdvancedMode">
+                    <h5>Advanced settings</h5>
                     <mat-form-field>
-                        <input matInput placeholder="address">
-                        <mat-icon matSuffix>place</mat-icon>
+                        <input type="number" matInput placeholder="Number of questions" matTooltip="per challenge">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="number" matInput postfix placeholder="Time to read">
+                        <span matSuffix>sec.</span>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="number" matInput postfix placeholder="Answer time">
+                        <span matSuffix>sec.</span>
+                    </mat-form-field>
+                    <div>
+                        <mat-checkbox>Show help on App</mat-checkbox>
+                    </div>
+                    <div>
+                        <mat-checkbox>Google search for questions</mat-checkbox>
+                    </div>
+                    <mat-form-field>
+                        <mat-select placeholder="Select time zone" disableRipple>
+                            <mat-option value="1">Inactive</mat-option>
+                            <mat-option value="2">Active</mat-option>
+                            <mat-option value="3">Archived</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="number" matInput postfix placeholder="Time adjust" min="-12" max="12">
+                        <span matSuffix>hour/s</span>
                     </mat-form-field>
                 </section>
             </div>
@@ -31,9 +82,74 @@
                 <section>
                     <h3>Restrictions</h3>
                     <mat-form-field>
-                        <input matInput placeholder="address">
-                        <mat-icon matSuffix>place</mat-icon>
+                        <input type="number" matInput postfix placeholder="Challenge lapsed">
+                        <span matSuffix>days</span>
                     </mat-form-field>
+                    <mat-form-field>
+                        <input type="number" matInput postfix placeholder="Time left for finishing challenges"
+                            matTooltip="before the end of the game">
+                        <span matSuffix>min.</span>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="number" matInput postfix placeholder="Min score for Awards">
+                        <span matSuffix>points</span>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="number" matInput postfix placeholder="Max number of pending challenges">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="number" matInput postfix placeholder="Max number of challenges per day">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="number" matInput postfix placeholder="Minimum number of challenges for activating limitations for challenging">
+                    </mat-form-field>
+
+                </section>
+
+                <section *ngIf="isAdvancedMode">
+                    <h5>Advanced restrictions</h5>
+                    <mat-form-field>
+                        <input type="number" matInput postfix placeholder="Min score for advanced challenge (x2)">
+                        <span matSuffix>points</span>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="number" matInput postfix placeholder="Min score for advanced challenge (x3)">
+                        <span matSuffix>points</span>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="number" matInput postfix placeholder="Min score for advanced challenge (5%)">
+                        <span matSuffix>points</span>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="number" matInput postfix placeholder="Max. number of challenges between the same players in a day">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="number" matInput postfix placeholder="Score Percentage of the top 1 score
+for determining top users with challenge limitations">
+                        <span matSuffix>%</span>
+                    </mat-form-field>
+                    <div>
+                        <mat-checkbox>Allow challenges between team members</mat-checkbox>
+                    </div>
+                    <div>
+                        <mat-checkbox>Trainings enabled</mat-checkbox>
+                    </div>
+                </section>
+            </div>
+
+            <div class="mdc-layout-grid__cell">
+                <section>
+                    <h3>Scoring system</h3>
+                    <mat-form-field>
+                        <input type="number" matInput placeholder="Score per remaining seconds in questions" matTooltip="(points per second)">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="number" matInput placeholder="Valid question answer score" matTooltip="(points per valid answer)">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="number" matInput placeholder="Lost points for lapsed challenges">
+                    </mat-form-field>
+                    <mat-checkbox class="example-margin">Scores for training</mat-checkbox>
                 </section>
             </div>
 
@@ -41,18 +157,42 @@
                 <section>
                     <h3>Experience level</h3>
                     <mat-form-field>
-                        <input matInput placeholder="address">
-                        <mat-icon matSuffix>place</mat-icon>
+                        <input type="number" matInput postfix placeholder="Apprentice" value="0">
+                        <span matSuffix>Challenges</span>
                     </mat-form-field>
+                    <mat-form-field>
+                        <input type="number" matInput postfix placeholder="Advanced" value="30">
+                        <span matSuffix>Challenges</span>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="number" matInput postfix placeholder="Expert" value="70">
+                        <span matSuffix>Challenges</span>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="number" matInput postfix placeholder="Master" value="100">
+                        <span matSuffix>Challenges</span>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="number" matInput postfix placeholder="Legend" value="150">
+                        <span matSuffix>Challenges</span>
+                    </mat-form-field>
+
                 </section>
             </div>
 
             <div class="mdc-layout-grid__cell">
                 <section>
                     <h3>Invitations</h3>
+                    <div>
+                        <mat-checkbox>Invitations on the App enabled</mat-checkbox>
+                    </div>
                     <mat-form-field>
-                        <input matInput placeholder="address">
-                        <mat-icon matSuffix>place</mat-icon>
+                        <input matInput placeholder="Score for accepted invitations">
+                        <mat-icon matSuffix>points</mat-icon>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Max. accum score for accepted invitations">
+                        <mat-icon matSuffix>points</mat-icon>
                     </mat-form-field>
                 </section>
             </div>
@@ -61,9 +201,18 @@
                 <section>
                     <h3>Next game</h3>
                     <mat-form-field>
-                        <input matInput placeholder="address">
-                        <mat-icon matSuffix>place</mat-icon>
+                        <mat-select placeholder="Indicator for entering next level" disableRipple>
+                            <mat-option value="1">Knowledge level</mat-option>
+                            <mat-option value="2">% Valid answers (day)</mat-option>
+                            <mat-option value="3">To position</mat-option>
+                        </mat-select>
                     </mat-form-field>
+                    <mat-form-field>
+                        <input matInput type="number" placeholder="Min. value for entering the new level">
+                    </mat-form-field>
+                    <div>
+                        <mat-checkbox>Include users that not reach the required level in the next game base</mat-checkbox>
+                    </div>
                 </section>
             </div>
         </div>

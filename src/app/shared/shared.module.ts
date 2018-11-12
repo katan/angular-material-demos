@@ -56,6 +56,7 @@ import { SidenavComponent } from './layouts/sidenav/sidenav.component';
 import { LanguageDropdownComponent } from './layouts/toolbar/language-dropdown/language-dropdown.component';
 import { LogoutButtonComponent } from './layouts/toolbar/logout-button/logout-button.component';
 import { MenuComponent } from './layouts/sidenav/menu/menu.component';
+import { AssignToComponent } from './toasts/assign-to/assign-to.component';
 
 @NgModule({
 	imports: [
@@ -123,10 +124,12 @@ import { MenuComponent } from './layouts/sidenav/menu/menu.component';
 		SidenavComponent,
 		LanguageDropdownComponent,
 		LogoutButtonComponent,
-		MenuComponent
+		MenuComponent,
+		AssignToComponent
 	],
 	entryComponents: [
-		DialogLogoutComponent
+		DialogLogoutComponent,
+		AssignToComponent
 	]
 })
 export class SharedModule { }
