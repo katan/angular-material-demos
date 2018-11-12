@@ -1,0 +1,57 @@
+<div class="content">
+    <!--  -->
+    <div>
+        <div class="options-wrapper">
+            <!-- Select language -->
+            <mat-form-field>
+                <mat-select placeholder="Select language" disableRipple>
+                    <mat-option value="en">
+                        <span>English</span>
+                        <span>(default)</span>
+                    </mat-option>
+                    <mat-option value="es">Spanish</mat-option>
+                    <mat-option value="fr">French</mat-option>
+                    <mat-option value="it">Italian</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <!-- action icons -->
+            <div class="actions">
+                <!--  -->
+                <button *ngIf="!isMobile" mat-button class="button" matTooltip="Remove language">
+                    <mat-icon aria-label="main toolbar logout icon">delete</mat-icon>
+                </button>
+
+                <button *ngIf="!isMobile" mat-button class="button" matTooltip="Mark as default language">
+                    <mat-icon aria-label="main toolbar logout icon">book</mat-icon>
+                </button>
+
+                <button *ngIf="!isMobile" mat-button class="button" matTooltip="Paste the language options from default">
+                    <mat-icon aria-label="main toolbar logout icon">assignment</mat-icon>
+                </button>
+
+                <button *ngIf="isMobile" mat-button class="button" [matMenuTriggerFor]="options" matTooltip="more">
+                    <mat-icon aria-label="main toolbar logout icon">more_vert</mat-icon>
+                </button>
+                <mat-menu class="mobile" #options="matMenu">
+                    <mat-nav-list>
+                        <mat-list-item>
+                            <mat-icon aria-label="main toolbar logout icon">delete</mat-icon>
+                            <span>Remove language</span>
+                        </mat-list-item>
+
+                        <mat-list-item>
+                            <mat-icon aria-label="main toolbar logout icon">book</mat-icon>
+                            <span>Mark as default language</span>
+                        </mat-list-item>
+
+                        <mat-list-item>
+                            <mat-icon aria-label="main toolbar logout icon">assignment</mat-icon>
+                            <span>Paste the language options from default</span>
+                        </mat-list-item>
+                    </mat-nav-list>
+                </mat-menu>
+            </div>
+        </div>
+    </div>
+</div>

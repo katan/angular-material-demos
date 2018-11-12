@@ -6,6 +6,7 @@ import { SharedModule } from '@app/shared/shared.module';
 import { StretchedLabelsComponent } from './stretched-labels/stretched-labels.component';
 import { DataTableComponent } from './stretched-labels/data-table/data-table.component';
 import { FormComponent } from './stretched-labels/form/form.component';
+import { LanguageOptionsComponent } from './stretched-labels/language-options/language-options.component';
 
 export const tabsRouting: Routes = [
     {
@@ -27,6 +28,7 @@ export const tabsRouting: Routes = [
 @NgModule({
     declarations: [
         StretchedLabelsComponent,
+        LanguageOptionsComponent,
         DataTableComponent,
         FormComponent
     ],

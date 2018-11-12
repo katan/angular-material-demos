@@ -4,7 +4,7 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { MatSort, MatPaginator, MatTableDataSource, MatSnackBar } from '@angular/material';
 
 import { Ingredient } from '@app/models/index';
-import { DeviceHelper } from '@app/core/helpers/index'
+import { DeviceHelper } from '@app/core/helpers/index';
 import { AssignToComponent } from '@app/shared/toasts/index';
 
 @Component({

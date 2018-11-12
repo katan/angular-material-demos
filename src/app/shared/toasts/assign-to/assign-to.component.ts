@@ -8,6 +8,7 @@ import { MAT_SNACK_BAR_DATA } from '@angular/material';
 })
 export class AssignToComponent implements OnInit {
 
+    // constructor(@Inject(MAT_SNACK_BAR_DATA) public selection: SelectionMode) { }
     constructor(@Inject(MAT_SNACK_BAR_DATA) public selection: any) { }
 
     ngOnInit() {
