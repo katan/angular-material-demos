@@ -1,57 +1,98 @@
-<div class="content">
-    <!--  -->
-    <div>
-        <div class="options-wrapper">
-            <!-- Select language -->
-            <mat-form-field>
-                <mat-select placeholder="Select language" disableRipple>
-                    <mat-option value="en">
-                        <span>English</span>
-                        <span>(default)</span>
-                    </mat-option>
-                    <mat-option value="es">Spanish</mat-option>
-                    <mat-option value="fr">French</mat-option>
-                    <mat-option value="it">Italian</mat-option>
-                </mat-select>
-            </mat-form-field>
+<div class="content-wrapper">
+    <div class="options-wrapper">
+        <!-- Select language -->
+        <mat-form-field>
+            <mat-select placeholder="Select language" disableRipple>
+                <mat-option value="en">
+                    <span>English</span>
+                    <span>(default)</span>
+                </mat-option>
+                <mat-option value="es">Spanish</mat-option>
+                <mat-option value="fr">French</mat-option>
+                <mat-option value="it">Italian</mat-option>
+            </mat-select>
+        </mat-form-field>
 
-            <!-- action icons -->
-            <div class="actions">
-                <!--  -->
-                <button *ngIf="!isMobile" mat-button class="button" matTooltip="Remove language">
-                    <mat-icon aria-label="main toolbar logout icon">delete</mat-icon>
-                </button>
+        <!-- action icons -->
+        <div class="actions">
+            <!--  -->
+            <button *ngIf="!isMobile" mat-button class="button" matTooltip="Remove language">
+                <mat-icon aria-label="main toolbar logout icon">delete</mat-icon>
+            </button>
 
-                <button *ngIf="!isMobile" mat-button class="button" matTooltip="Mark as default language">
-                    <mat-icon aria-label="main toolbar logout icon">book</mat-icon>
-                </button>
+            <button *ngIf="!isMobile" mat-button class="button" matTooltip="Mark as default language">
+                <mat-icon aria-label="main toolbar logout icon">book</mat-icon>
+            </button>
 
-                <button *ngIf="!isMobile" mat-button class="button" matTooltip="Paste the language options from default">
-                    <mat-icon aria-label="main toolbar logout icon">assignment</mat-icon>
-                </button>
+            <button *ngIf="!isMobile" mat-button class="button" matTooltip="Paste the language options from default">
+                <mat-icon aria-label="main toolbar logout icon">assignment</mat-icon>
+            </button>
 
-                <button *ngIf="isMobile" mat-button class="button" [matMenuTriggerFor]="options" matTooltip="more">
-                    <mat-icon aria-label="main toolbar logout icon">more_vert</mat-icon>
-                </button>
-                <mat-menu class="mobile" #options="matMenu">
-                    <mat-nav-list>
-                        <mat-list-item>
-                            <mat-icon aria-label="main toolbar logout icon">delete</mat-icon>
-                            <span>Remove language</span>
-                        </mat-list-item>
+            <button *ngIf="isMobile" mat-button class="button" [matMenuTriggerFor]="options" matTooltip="more">
+                <mat-icon aria-label="main toolbar logout icon">more_vert</mat-icon>
+            </button>
+            <mat-menu class="mobile" #options="matMenu">
+                <mat-nav-list>
+                    <mat-list-item>
+                        <mat-icon aria-label="main toolbar logout icon">delete</mat-icon>
+                        <span>Remove language</span>
+                    </mat-list-item>
 
-                        <mat-list-item>
-                            <mat-icon aria-label="main toolbar logout icon">book</mat-icon>
-                            <span>Mark as default language</span>
-                        </mat-list-item>
+                    <mat-list-item>
+                        <mat-icon aria-label="main toolbar logout icon">book</mat-icon>
+                        <span>Mark as default language</span>
+                    </mat-list-item>
 
-                        <mat-list-item>
-                            <mat-icon aria-label="main toolbar logout icon">assignment</mat-icon>
-                            <span>Paste the language options from default</span>
-                        </mat-list-item>
-                    </mat-nav-list>
-                </mat-menu>
-            </div>
+                    <mat-list-item>
+                        <mat-icon aria-label="main toolbar logout icon">assignment</mat-icon>
+                        <span>Paste the language options from default</span>
+                    </mat-list-item>
+                </mat-nav-list>
+            </mat-menu>
+        </div>
+    </div>
+    <div class="d-flex">
+        <!-- nam, last name ... -->
+        <div>
+            <section>
+                <h3>General settings</h3>
+                <mat-form-field>
+                    <textarea matInput placeholder="Game"></textarea>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <textarea matInput placeholder="Description"></textarea>
+                </mat-form-field>
+
+                <p>
+                    <app-html-editor idname="htmlEditorDetailed" placeholder="Detailed description"></app-html-editor>
+                </p>
+            </section>
+        </div>
+
+        <div>
+            <section>
+                <h3>Invitation email</h3>
+                <mat-form-field>
+                    <textarea matInput placeholder="Subjet"></textarea>
+                </mat-form-field>
+
+                <p>
+                    <app-html-editor idname="htmlEditorEmailBody" placeholder="Email body"></app-html-editor>
+                </p>
+
+                <p>
+                    <app-html-editor idname="htmlEditorMsgInvitation" placeholder="Message for describing invitations on the App"></app-html-editor>
+                </p>
+
+                <mat-form-field>
+                    <textarea matInput placeholder="Default message for invitations on the App"></textarea>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Terms and conditions link" />
+                </mat-form-field>
+            </section>
         </div>
     </div>
 </div>

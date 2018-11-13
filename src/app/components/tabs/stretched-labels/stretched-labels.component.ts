@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTabChangeEvent } from '@angular/material';
 
 @Component({
     selector: 'app-stretched-labels',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StretchedLabelsComponent implements OnInit {
     public currentTabIndex: number;
+    public currentLabel: string;
 
     constructor() {
         this.currentTabIndex = 0;

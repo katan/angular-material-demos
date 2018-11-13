@@ -1,0 +1,20 @@
+<div class="content-wrapper">
+    <h3>Integrations</h3>
+    <section>
+        <mat-form-field>
+            <input type="url" matInput postfix placeholder="Slack webhook url">
+            <span matSuffix>url</span>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input type="url" matInput postfix placeholder="HubSpot (format: portal_id/form_guid)">
+            <span matSuffix>url</span>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Default password for new users" [type]="hidePassword ? 'password' : 'text'">
+            <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility_off' :
+                'visibility'}}</mat-icon>
+        </mat-form-field>
+    </section>
+</div>

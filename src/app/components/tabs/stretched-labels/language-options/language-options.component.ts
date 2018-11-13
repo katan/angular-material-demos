@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 
 import { DeviceHelper } from '@app/core/helpers/index';
 
@@ -7,15 +7,14 @@ import { DeviceHelper } from '@app/core/helpers/index';
     templateUrl: './language-options.component.html',
     styleUrls: ['./language-options.component.scss']
 })
-export class LanguageOptionsComponent implements OnInit {
+export class LanguageOptionsComponent {
 
+    public elementId: string;
     public isMobile: boolean;
+
+    @Input() initHtmlEditor: string;
 
     constructor() {
         this.isMobile = DeviceHelper.isMobile();
     }
-
-    ngOnInit() {
-    }
-
 }

@@ -5,6 +5,9 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+// Angular html editor
+import { AngularEditorModule } from '@kolkov/angular-editor';
+
 // Material
 import { LayoutModule } from '@angular/cdk/layout';
 import {
@@ -72,7 +75,7 @@ import { AssignToComponent } from './toasts/assign-to/assign-to.component';
 		MatIconModule,
 		MatListModule,
 		MatDialogModule,
-		MatMenuModule
+		MatMenuModule,
 	],
 	exports: [
 		CommonModule,
@@ -113,6 +116,7 @@ import { AssignToComponent } from './toasts/assign-to/assign-to.component';
 		MatSortModule,          // Sort tables
 		MatPaginatorModule,
 		/* End Material */
+		AngularEditorModule
 	],
 	declarations: [
 		MainNavComponent,

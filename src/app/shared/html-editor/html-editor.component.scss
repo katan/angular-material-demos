@@ -1,0 +1,12 @@
+/deep/ .angular-editor-toolbar {
+    background-color: #ffffff !important;
+    border-radius: 5px;
+}
+
+/deep/ .angular-editor-wrapper {
+    background-color: #ffffff !important;
+
+    .angular-editor-textarea {
+        min-height: 48px !important;
+    }
+}
