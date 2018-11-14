@@ -14,8 +14,38 @@
 // Import material styles
 @import '@material/layout-grid/dist/mdc.layout-grid.min.css';
 
+/**
+ * START themes
+ */
+
 // import default theme
 @import './themes/default.scss';
+@import './themes/minimal-light.scss';
+@import './themes/minimal-dark.scss';
+
+// Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
+@include mat-base-typography($minimal-custom-typography);
+// Override typography for a specific Angular Material components.
+@include mat-checkbox-typography($minimal-custom-typography);
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include angular-material-typography($minimal-custom-typography);
+
+// Include a default theme at start
+@include angular-material-theme($default-theme);
+
+.default-theme {
+    @include angular-material-theme($default-theme);
+}
+
+.minimal-light-theme {
+    @include angular-material-theme($minimal-light-theme);
+}
+
+.minimal-dark-theme {
+    @include angular-material-theme($minimal-dark-theme);
+}
+
+// END themes
 
 // Import Lato Font
 @import './fonts.scss';

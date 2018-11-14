@@ -12,6 +12,16 @@
         <mat-card-content>
             You are working on <br />
             <b>Environment name</b>
+            <h3>Change themes</h3>
+            <div>
+                <button mat-flat-button color="primary" (click)="changeTheme('default-theme')">Default</button>
+            </div>
+            <div>
+                <button mat-flat-button color="primary" (click)="changeTheme('minimal-light-theme')">Minimal light</button>
+            </div>
+            <div>
+                <button mat-flat-button color="primary" (click)="changeTheme('minimal-dark-theme')">Minimal dark</button>
+            </div>
         </mat-card-content>
         <mat-card-actions align="end">
             <button mat-button>

@@ -1,4 +1,5 @@
-<app-main-nav>
+<app-main-nav [class.default-theme]="currentTheme == 'default-theme'" [class.minimal-light-theme]="currentTheme == 'minimal-light-theme'"
+    [class.minimal-dark-theme]="currentTheme == 'minimal-dark-theme'">
     <div id="main-content-wrapper">
         <router-outlet></router-outlet>
     </div>

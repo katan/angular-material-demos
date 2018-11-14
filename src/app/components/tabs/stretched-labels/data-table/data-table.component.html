@@ -24,7 +24,7 @@
                     <mat-icon aria-label="main toolbar logout icon">cloud_upload</mat-icon>
                 </button>
 
-                <button *ngIf="!isMobile" mat-button class="button" matTooltip="Export data">
+                <button *ngIf="!isMobile" (click)="exportToExcel('table')" mat-button class="button" matTooltip="Export data">
                     <mat-icon aria-label="main toolbar logout icon">cloud_download</mat-icon>
                 </button>
 
@@ -50,7 +50,7 @@
                                 <span>Import data</span>
                             </mat-list-item>
 
-                            <mat-list-item>
+                            <mat-list-item (click)="exportToExcel('table')">
                                 <mat-icon aria-label="main toolbar logout icon">cloud_download</mat-icon>
                                 <span>Export data</span>
                             </mat-list-item>
@@ -79,9 +79,9 @@
 
                 <!-- Group list -->
                 <mat-menu #groupList="matMenu" (change)="assignTo()">
-                    <button mat-menu-item>Group A</button>
-                    <button mat-menu-item>Group B</button>
-                    <button mat-menu-item>Group C</button>
+                    <button mat-menu-item>Team A</button>
+                    <button mat-menu-item>Team B</button>
+                    <button mat-menu-item>Team C</button>
                 </mat-menu>
             </div>
         </div>

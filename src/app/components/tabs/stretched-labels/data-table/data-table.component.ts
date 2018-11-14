@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatSort, MatPaginator, MatTableDataSource, MatSnackBar } from '@angular/material';
 
+import { ExcelHelper } from '@app/core/helpers/index';
+
 import { Ingredient } from '@app/models/index';
 import { DeviceHelper } from '@app/core/helpers/index';
 import { AssignToComponent } from '@app/shared/toasts/index';
@@ -58,5 +60,16 @@ export class DataTableComponent implements OnInit {
             duration: 5000,
             data: this.selection
         });
+    }
+
+    public exportToExcel(name: string): void {
+        if (this.selection.selected.length > 0) {
+            ExcelHelper.exportAsExcelFile(this.selection.selected, name);
+        } else {
+            this.toast.openFromComponent(AssignToComponent, {
+                duration: 5000,
+                data: this.selection
+            });
+        }
     }
 }
