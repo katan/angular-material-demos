@@ -4,11 +4,19 @@ Roboto,
 'Helvetica',
 'Arial',
 sans-serif;
+$app-theme-name: 'default';
 
 /**
  * Overwrite default theming
  */
 @import '../colors.scss';
+
+.default-theme {
+    mat-sidenav {
+        border-right: none !important;
+        box-shadow: map-get($app-sidevar-side, $app-theme-name);
+    }
+}
 
 // End Overwrite
 
@@ -35,11 +43,16 @@ $body-1: mat-typography-level(1rem, 1.15rem, 500));
 
     #main-footer {
         border-top: 1px solid rgba(black, 0.12);
+        background-color: map-get($app-footer, $app-theme-name);
     }
 
     div.tab-group {
+        mat-header-row {
+            background-color: map-get($app-tab-header, $app-theme-name);
+        }
+
         section {
-            background-color: map-get($tab-section, 'default');
+            background-color: map-get($app-tab-section, $app-theme-name);
         }
     }
 }

@@ -118,6 +118,18 @@ A400 : #000000,
 A700 : #000000,
 ));
 
-$tab-section: (default: white,
+$app-tab-section: (default: white,
 light: whitesmoke,
-dark: #222222)
+dark: #222222);
+
+$app-tab-header: (default: whitesmoke,
+light: whitesmoke,
+dark: #555555);
+
+$app-footer: (default: whitesmoke,
+light: whitesmoke,
+dark: #555555);
+
+$app-sidevar-side: (default: 0px 0 7px -2px #000,
+light: 0px 0 7px -2px #000,
+dark: 1px 0 7px -2px #000);

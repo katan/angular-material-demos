@@ -4,7 +4,7 @@ Roboto,
 'Helvetica',
 'Arial',
 sans-serif;
-
+$app-theme-name: 'light';
 
 /**
  * Overwrite default theming
@@ -12,6 +12,13 @@ sans-serif;
 
 /* For use in src/lib/core/theming/_palette.scss */
 @import '../colors.scss';
+
+.minimal-light-theme {
+    mat-sidenav {
+        border-right: none !important;
+        box-shadow: map-get($app-sidevar-side, $app-theme-name);
+    }
+}
 
 // Background palette for light themes.
 $mat-light-theme-background: (status-bar: map_get($mat-grey, 300),
@@ -74,12 +81,17 @@ $body-1: mat-typography-level(1rem, 1.15rem, 500));
             display: none;
         }
 
+        mat-header-row {
+            background-color: map-get($app-tab-header, $app-theme-name);
+        }
+
         section {
-            background-color: map-get($tab-section, 'light');
+            background-color: map-get($app-tab-section, $app-theme-name);
         }
     }
 
     #main-footer {
         border-top: 1px solid rgba(black, 0.12);
+        background-color: map-get($app-footer, $app-theme-name);
     }
 }
