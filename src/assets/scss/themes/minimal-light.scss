@@ -4,22 +4,82 @@ Roboto,
 'Helvetica',
 'Arial',
 sans-serif;
-$background-footer: #bbbbbb;
+
+
+/**
+ * Overwrite default theming
+ */
+
+/* For use in src/lib/core/theming/_palette.scss */
+@import '../colors.scss';
+
+// Background palette for light themes.
+$mat-light-theme-background: (status-bar: map_get($mat-grey, 300),
+app-bar: map_get($mat-grey, 100),
+background:white,
+hover: rgba(black, 0.04), // TODO(kara): check style with Material Design UX
+card: white,
+dialog: white,
+disabled-button: rgba(black, 0.12),
+raised-button: white,
+focused-button: $dark-focused,
+selected-button: map_get($mat-grey, 300),
+selected-disabled-button: map_get($mat-grey, 400),
+disabled-button-toggle: map_get($mat-grey, 200),
+unselected-chip: map_get($mat-grey, 300),
+disabled-list-option: map_get($mat-grey, 200));
+
+.minimal-light-theme {
+
+    // TABS
+    .mat-tab-group {
+        box-shadow: none !important;
+
+        .mat-tab-header {
+            position: sticky;
+            top: 0;
+            z-index: 9;
+            background: whitesmoke;
+        }
+    }
+}
+
+// End Overwrite
+
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$minimal-light-primary: mat-palette($mat-light-blue);
-$minimal-light-accent: mat-palette($mat-yellow, A400);
-
-// The warn palette is optional (defaults to red).
-$minimal-light-warn: mat-palette($mat-red);
+$minimal-light-primary: mat-palette($mat-primary);
+$minimal-light-accent: mat-palette($mat-light-accent);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$minimal-light-theme: mat-light-theme($minimal-light-primary, $minimal-light-accent, $minimal-light-warn);
+$minimal-light-theme: mat-light-theme($minimal-light-primary, $minimal-light-accent);
 
 // Define a custom typography config that overrides the font-family as well as the
 // `headlines` and `body-1` levels.
 $minimal-custom-typography: mat-typography-config($font-family: $available-fonts,
 $headline: mat-typography-level(1.33rem, 1.5rem, 700),
 $body-1: mat-typography-level(1rem, 1.15rem, 500));
+
+/**
+  * Overwrite main styles
+  */
+.minimal-light-theme {
+
+    div.tab-group {
+        padding: 0 !important;
+
+        h2 {
+            display: none;
+        }
+
+        section {
+            background-color: map-get($tab-section, 'light');
+        }
+    }
+
+    #main-footer {
+        border-top: 1px solid rgba(black, 0.12);
+    }
+}

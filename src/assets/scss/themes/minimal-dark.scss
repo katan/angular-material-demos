@@ -4,22 +4,66 @@ Roboto,
 'Helvetica',
 'Arial',
 sans-serif;
-$background-footer: #bbbbbb;
+
+/**
+ * Overwrite default theming
+ */
+@import '../colors.scss';
+
+.minimal-dark-theme {
+
+    // TABS
+    .mat-tab-group {
+        box-shadow: none !important;
+
+        .mat-tab-header {
+            position: sticky;
+            top: 0;
+            z-index: 9;
+            background-color: #303030;
+        }
+    }
+
+    .angular-editor-wrapper {
+        color: black;
+    }
+}
+
+// End Overwrite
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $minimal-dark-primary: mat-palette($mat-light-blue);
-$minimal-dark-accent: mat-palette($mat-yellow, A400);
-
-// The warn palette is optional (defaults to red).
-$minimal-dark-warn: mat-palette($mat-red);
+$minimal-dark-accent: mat-palette($mat-dark-accent);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$minimal-dark-theme: mat-dark-theme($minimal-dark-primary, $minimal-dark-accent, $minimal-dark-warn);
+$minimal-dark-theme: mat-dark-theme($minimal-dark-primary, $minimal-dark-accent);
 
 // Define a custom typography config that overrides the font-family as well as the
 // `headlines` and `body-1` levels.
 $minimal-custom-typography: mat-typography-config($font-family: $available-fonts,
 $headline: mat-typography-level(1.33rem, 1.5rem, 700),
 $body-1: mat-typography-level(1rem, 1.15rem, 500));
+
+/**
+  * Overwrite main styles
+  */
+.minimal-dark-theme {
+
+    div.tab-group {
+        padding: 0 !important;
+
+        h2 {
+            display: none;
+        }
+
+        section {
+            background-color: map-get($tab-section, 'dark');
+        }
+    }
+
+    #main-footer {
+        border-top: 1px solid rgba(black, 0.12);
+    }
+}

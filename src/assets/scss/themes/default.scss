@@ -4,7 +4,13 @@ Roboto,
 'Helvetica',
 'Arial',
 sans-serif;
-$background-footer: #bbbbbb;
+
+/**
+ * Overwrite default theming
+ */
+@import '../colors.scss';
+
+// End Overwrite
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
@@ -12,14 +18,28 @@ $background-footer: #bbbbbb;
 $default-app-primary: mat-palette($mat-indigo);
 $default-app-accent: mat-palette($mat-pink, A200, A100, A400);
 
-// The warn palette is optional (defaults to red).
-$default-app-warn: mat-palette($mat-red);
-
 // Create the theme object (a Sass map containing all of the palettes).
-$default-theme: mat-light-theme($default-app-primary, $default-app-accent, $default-app-warn);
+$default-theme: mat-light-theme($default-app-primary, $default-app-accent);
 
 // Define a custom typography config that overrides the font-family as well as the
 // `headlines` and `body-1` levels.
 $default-custom-typography: mat-typography-config($font-family: $available-fonts,
 $headline: mat-typography-level(1.33rem, 1.5rem, 700),
 $body-1: mat-typography-level(1rem, 1.15rem, 500));
+
+
+/**
+  * Overwrite main styles
+  */
+.default-theme {
+
+    #main-footer {
+        border-top: 1px solid rgba(black, 0.12);
+    }
+
+    div.tab-group {
+        section {
+            background-color: map-get($tab-section, 'default');
+        }
+    }
+}

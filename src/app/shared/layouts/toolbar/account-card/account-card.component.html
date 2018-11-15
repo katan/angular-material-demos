@@ -12,18 +12,20 @@
         <mat-card-content>
             You are working on <br />
             <b>Environment name</b>
-            <h3>Change themes</h3>
-            <div>
-                <button mat-flat-button color="primary" (click)="changeTheme('default-theme')">Default</button>
-            </div>
-            <div>
-                <button mat-flat-button color="primary" (click)="changeTheme('minimal-light-theme')">Minimal light</button>
-            </div>
-            <div>
-                <button mat-flat-button color="primary" (click)="changeTheme('minimal-dark-theme')">Minimal dark</button>
-            </div>
+            <p>
+                <sub>Themes:</sub>
+            </p>
         </mat-card-content>
         <mat-card-actions align="end">
+            <button mat-icon-button matTooltip="Change to default theme" (click)="changeTheme('default-theme')">
+                <mat-icon aria-label="Example icon-button with a heart icon" color="primary">palette</mat-icon>
+            </button>
+            <button mat-icon-button matTooltip="Change to minimal ligth theme" (click)="changeTheme('minimal-light-theme')">
+                <mat-icon aria-label="Example icon-button with a heart icon" color="accent">palette</mat-icon>
+            </button>
+            <button mat-icon-button matTooltip="Change to minimal dark theme" (click)="changeTheme('minimal-dark-theme')">
+                <mat-icon aria-label="Example icon-button with a heart icon" color="warm">palette</mat-icon>
+            </button>
             <button mat-button>
                 <mat-icon aria-label="main toolbar user account icon">edit</mat-icon>
                 <span>EDIT</span>

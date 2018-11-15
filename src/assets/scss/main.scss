@@ -10,7 +10,7 @@ body {
 
 #main-content-wrapper {
     position: relative;
-    height: calc(100% - 115px);
+    height: calc(100% - 116px);
     overflow: hidden;
     overflow-y: auto;
 }
@@ -20,7 +20,6 @@ body {
     bottom: 0;
     width: 100%;
     padding: 16px 0;
-    background-color: $background-footer;
 
     div {
         padding: 0 24px;
@@ -43,12 +42,10 @@ mat-toolbar {
 
 app-toolbar {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
 
-    #main-toolbar {
-        position: relative;
-        float: right;
-        right: 16px;
-
+    #toolbar-options {
         div {
             display: inline-block;
         }
@@ -63,4 +60,38 @@ app-toolbar {
             }
         }
     }
+}
+
+/**
+ * Common tabs
+ */
+div.tab-group {
+    padding: 24px 36px 36px;
+
+    h2 {
+        font-weight: 400;
+        margin-top: 0;
+    }
+
+    mat-tab-group {
+        border-radius: 4px;
+
+        div.footer {
+            display: flex;
+            padding: 16px 32px;
+
+            .fill-space {
+                // This fills the remaining space, by using flexbox.
+                // Every toolbar row uses a flexbox row layout.
+                flex: 1 1 auto;
+            }
+        }
+    }
+
+}
+
+#breadcrumb-wrapper {
+    margin-left: 8px;
+    display: inline-block;
+    vertical-align: middle;
 }

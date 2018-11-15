@@ -15,5 +15,5 @@ export const AppSettings = {
         width: '100%',
         height: '60px'
     },
-    defaultTheme: 'minimal-dark-theme'
+    defaultTheme: 'default-theme'
 }

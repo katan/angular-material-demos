@@ -55,7 +55,7 @@
 
 @media(max-width:1023px) {
     app-toolbar {
-        #main-toolbar {
+        #toolbar-options {
             button {
                 font-size: 1rem;
             }
@@ -67,7 +67,7 @@
 
     /* Hide toolbar text (show only text) */
     app-toolbar {
-        #main-toolbar {
+        #toolbar-options {
             right: 0;
 
             span.name {

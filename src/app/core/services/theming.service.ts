@@ -14,18 +14,24 @@ export class ThemingService {
 	constructor(private overlayContainer: OverlayContainer) {
 		this.themingEmitter = new BehaviorSubject<string>(AppSettings.defaultTheme);
 		this.theming$ = this.themingEmitter.asObservable();
-
+		this.addOverlayThemeClass(AppSettings.defaultTheme);
 	}
 
 	public set(theme: string) {
-		// Get old class theme name to replace for the new theme
-
-		// Be careful changing the overlay container, the app crash changing pages on data tables
-
-		// const oldTheme = this.overlayContainer.getContainerElement().classList[this.overlayContainer.getContainerElement().classList.length - 1];
-		// this.overlayContainer.getContainerElement().classList.replace(oldTheme, theme);
-
+		this.addOverlayThemeClass(theme);
 		// Emit the new class
 		this.themingEmitter.next(theme);
+	}
+
+	private addOverlayThemeClass(theme: string) {
+		// Check if exists a theme
+		if (this.overlayContainer.getContainerElement().classList.length > 1) {
+			// Get old class theme name to replace for the new theme
+			const oldTheme = this.overlayContainer.getContainerElement().classList[this.overlayContainer.getContainerElement().classList.length - 1];
+			this.overlayContainer.getContainerElement().classList.replace(oldTheme, theme);
+		} else {
+			// Add the new theme
+			this.overlayContainer.getContainerElement().classList.add(theme);
+		}
 	}
 }
