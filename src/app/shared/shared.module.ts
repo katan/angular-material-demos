@@ -43,6 +43,8 @@ import {
 	MatPaginatorModule
 } from '@angular/material';
 
+import { PerfectScrollbarModule, PerfectScrollbarConfigInterface, PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+
 // Own components
 import {
 	MainNavComponent,
@@ -61,6 +63,12 @@ import { LogoutButtonComponent } from './layouts/toolbar/logout-button/logout-bu
 import { MenuComponent } from './layouts/sidenav/menu/menu.component';
 import { AssignToComponent } from './toasts/assign-to/assign-to.component';
 
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+	suppressScrollX: true,
+	wheelSpeed: 2,
+	wheelPropagation: true
+};
+
 @NgModule({
 	imports: [
 		// Angular
@@ -76,6 +84,8 @@ import { AssignToComponent } from './toasts/assign-to/assign-to.component';
 		MatListModule,
 		MatDialogModule,
 		MatMenuModule,
+		// End Materila
+		PerfectScrollbarModule
 	],
 	exports: [
 		CommonModule,
@@ -116,7 +126,8 @@ import { AssignToComponent } from './toasts/assign-to/assign-to.component';
 		MatSortModule,          // Sort tables
 		MatPaginatorModule,
 		/* End Material */
-		AngularEditorModule
+		AngularEditorModule,
+		PerfectScrollbarModule
 	],
 	declarations: [
 		MainNavComponent,
@@ -134,6 +145,13 @@ import { AssignToComponent } from './toasts/assign-to/assign-to.component';
 	entryComponents: [
 		DialogLogoutComponent,
 		AssignToComponent
+	],
+	providers: [
+		// scrollbar
+		{
+			provide: PERFECT_SCROLLBAR_CONFIG,
+			useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+		}
 	]
 })
 export class SharedModule { }

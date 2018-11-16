@@ -30,6 +30,7 @@
         "core-js": "^2.5.7",
         "file-saver": "^2.0.0",
         "material-design-icons-iconfont": "^4.0.2",
+        "ngx-perfect-scrollbar": "^7.0.0",
         "rxjs": "^6.3.3",
         "xlsx": "^0.14.1",
         "zone.js": "~0.8.26"

@@ -1,8 +1,8 @@
 <app-main-nav [class.default-theme]="currentTheme == 'default-theme'" [class.minimal-light-theme]="currentTheme == 'minimal-light-theme'"
     [class.minimal-dark-theme]="currentTheme == 'minimal-dark-theme'">
-    <div id="main-content-wrapper">
+    <perfect-scrollbar id="main-content-wrapper" [config]="config">
         <router-outlet></router-outlet>
-    </div>
+    </perfect-scrollbar>
     <!-- footer -->
     <app-footer></app-footer>
 </app-main-nav>

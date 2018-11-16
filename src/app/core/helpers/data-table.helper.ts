@@ -7,10 +7,6 @@ export class DataTableHelper {
 
     constructor() { }
 
-    public static hasFilter(dataSource: MatTableDataSource<any>): boolean {
-        return dataSource.filter && dataSource.filter.length > 0;
-    }
-
     public static applyFilter(value: string): string {
         return value.trim().toLowerCase();
     }
@@ -21,7 +17,7 @@ export class DataTableHelper {
             ? dataSource.filteredData.length
             : dataSource.data.length;
 
-        return numSelected === numRows;
+        return numSelected === numRows || numSelected > dataSource.filteredData.length;
     }
 
     public static toggleSelection(selection: SelectionModel<any>, dataSource: MatTableDataSource<any>): void {

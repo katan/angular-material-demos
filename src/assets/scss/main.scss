@@ -9,10 +9,7 @@ body {
 }
 
 #main-content-wrapper {
-    position: relative;
-    height: calc(100% - 116px);
-    overflow: hidden;
-    overflow-y: auto;
+    height: calc(100% - 58px);
 }
 
 #main-footer {
@@ -32,6 +29,10 @@ body {
 
 .sidenav {
     width: 280px;
+}
+
+mat-sidenav-content {
+    overflow: hidden !important;
 }
 
 mat-toolbar {
@@ -94,4 +95,12 @@ div.tab-group {
     margin-left: 8px;
     display: inline-block;
     vertical-align: middle;
+}
+
+/**
+ * Overwrite perfect scroll
+ */
+.ps__rail-y,
+.ps__rail-x {
+    z-index: 999;
 }
