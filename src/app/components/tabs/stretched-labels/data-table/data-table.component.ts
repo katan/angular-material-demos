@@ -29,7 +29,7 @@ export class DataTableComponent implements OnInit {
     constructor(private http: HttpClient, private toast: MatSnackBar) {
         this.isMobile = DeviceHelper.isMobile();
         this.selection = new SelectionModel<Ingredient>(true, []);
-        this.displayedColumns = ['select', 'num', 'categoryID', 'name', 'calories', 'IG'];
+        this.displayedColumns = ['select', 'num', 'categoryID', 'name', 'calories', 'ig'];
     }
 
     ngOnInit() {

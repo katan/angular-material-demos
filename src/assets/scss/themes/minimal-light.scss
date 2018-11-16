@@ -87,6 +87,9 @@ $body-1: mat-typography-level(1rem, 1.15rem, 500));
         }
 
         section {
+            padding: 12px 24px 24px;
+            border-radius: 6px;
+
             background-color: map-get($app-tab-section, $app-theme-name);
         }
     }

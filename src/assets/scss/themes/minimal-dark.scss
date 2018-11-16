@@ -25,7 +25,7 @@ $app-theme-name: 'dark';
             position: sticky;
             top: 0;
             z-index: 9;
-            background-color: #303030;
+            background-color: #3c3c3c;
             box-shadow: 0 2px 12px -6px #000000;
         }
     }
@@ -69,6 +69,9 @@ $body-1: mat-typography-level(1rem, 1.15rem, 500));
         }
 
         section {
+            padding: 12px 24px 24px;
+            border-radius: 6px;
+
             background-color: map-get($app-tab-section, $app-theme-name);
         }
     }

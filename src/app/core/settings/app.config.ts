@@ -15,5 +15,8 @@ export const AppSettings = {
         width: '100%',
         height: '60px'
     },
+    spinner: {
+        color: 'rgba(0, 115, 170, 0.69)'
+    },
     defaultTheme: 'default-theme'
 }
