@@ -3,7 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatSort, MatPaginator, MatTableDataSource, MatSnackBar } from '@angular/material';
 
-import { ExcelHelper } from '@app/core/helpers/index';
+import {
+    ExcelHelper,
+    DataTableHelper
+} from '@app/core/helpers/index';
 
 import { Ingredient } from '@app/models/index';
 import { DeviceHelper } from '@app/core/helpers/index';
@@ -18,13 +21,14 @@ export class DataTableComponent implements OnInit {
     public dataSource: MatTableDataSource<Ingredient>;
     public displayedColumns: string[];
     public isMobile: boolean;
-    selection = new SelectionModel<Ingredient>(true, []);
+    public selection: SelectionModel<Ingredient>;
 
     @ViewChild(MatSort) sort: MatSort;
     @ViewChild(MatPaginator) paginator: MatPaginator;
 
     constructor(private http: HttpClient, private toast: MatSnackBar) {
         this.isMobile = DeviceHelper.isMobile();
+        this.selection = new SelectionModel<Ingredient>(true, []);
         this.displayedColumns = ['select', 'num', 'categoryID', 'name', 'calories', 'IG'];
     }
 
@@ -39,20 +43,16 @@ export class DataTableComponent implements OnInit {
     }
 
     public applyFilter(filterValue: string) {
-        this.dataSource.filter = filterValue.trim().toLowerCase();
+        this.dataSource.filter = DataTableHelper.applyFilter(filterValue);
     }
 
     public isAllSelected(): boolean {
-        const numSelected = this.selection.selected.length;
-        const numRows = this.dataSource.data.length;
-        return numSelected === numRows;
+        return DataTableHelper.isAllSelected(this.selection, this.dataSource);
     }
 
     /** Selects all rows if they are not all selected; otherwise clear selection. */
     public masterToggle(): void {
-        this.isAllSelected() ?
-            this.selection.clear() :
-            this.dataSource.data.forEach(row => this.selection.select(row));
+        DataTableHelper.toggleSelection(this.selection, this.dataSource);
     }
 
     public assignTo() {
@@ -66,6 +66,7 @@ export class DataTableComponent implements OnInit {
         if (this.selection.selected.length > 0) {
             ExcelHelper.exportAsExcelFile(this.selection.selected, name);
         } else {
+            // TODO: changes toast component
             this.toast.openFromComponent(AssignToComponent, {
                 duration: 5000,
                 data: this.selection

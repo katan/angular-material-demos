@@ -56,7 +56,7 @@
                                 {
                                     "type": "initial",
                                     "name": "START",
-                                    "baseline": "1024kb",
+                                    "baseline": "1280kb",
                                     "maximumWarning": "64kb",
                                     "maximumError": "128kb"
                                 }

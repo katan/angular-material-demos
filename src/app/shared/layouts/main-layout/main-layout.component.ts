@@ -18,7 +18,6 @@ export class MainLayoutComponent implements OnInit {
 
         this.theming.theming$.subscribe(
             (newTheme => {
-                console.log(newTheme);
                 this.currentTheme = newTheme;
             })
         )

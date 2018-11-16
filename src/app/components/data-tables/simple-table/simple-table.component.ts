@@ -18,7 +18,6 @@ export class SimpleTableComponent implements OnInit {
     ngOnInit() {
         this.http.get('/assets/mocks/data-table.json').subscribe(
             (data: Array<Ingredient>) => {
-                console.log(data);
                 this.dataSource = data;
             }
         );
