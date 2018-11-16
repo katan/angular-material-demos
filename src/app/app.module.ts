@@ -8,10 +8,13 @@ import { SharedModule } from '@app/shared/shared.module';
 // App component
 import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
+// Spinner
+import { SpinnerComponent } from '@app/shared/spinner/spinner.component';
 
 @NgModule({
 	declarations: [
-		AppComponent
+		AppComponent,
+		SpinnerComponent
 	],
 	imports: [
 		// Angular
@@ -20,7 +23,7 @@ import { AppComponent } from './app.component';
 		// Routing
 		AppRoutingModule,
 		// App modules
-		SharedModule
+		SharedModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]
