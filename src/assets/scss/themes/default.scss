@@ -16,6 +16,32 @@ $app-theme-name: 'default';
         border-right: none !important;
         box-shadow: map-get($app-sidevar-side, $app-theme-name);
     }
+
+    .mat-tooltip {
+        font-size: .85rem;
+    }
+
+    .mat-tab-label {
+        height: 64px !important;
+        font-size: 1rem;
+
+        &.mat-tab-label-active {
+            font-weight: 600;
+        }
+    }
+
+    mat-header-cell {
+        font-size: 0.9rem !important;
+        font-weight: 600 !important;
+    }
+
+    .mat-menu-content {
+        padding: 0 !important;
+
+        .mat-nav-list {
+            padding: 0 !important;
+        }
+    }
 }
 
 // End Overwrite

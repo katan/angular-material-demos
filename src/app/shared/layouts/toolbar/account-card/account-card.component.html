@@ -17,13 +17,16 @@
             </p>
         </mat-card-content>
         <mat-card-actions align="end">
-            <button mat-icon-button matTooltip="Change to default theme" (click)="changeTheme('default-theme')">
+            <button mat-icon-button matTooltip="Change to default theme" (click)="changeTheme('default-theme')"
+                [style.background]="currentTheme == 'default-theme' && '#eeeeee' || 'none'">
                 <mat-icon aria-label="Example icon-button with a heart icon" color="primary">palette</mat-icon>
             </button>
-            <button mat-icon-button matTooltip="Change to minimal ligth theme" (click)="changeTheme('minimal-light-theme')">
+            <button mat-icon-button matTooltip="Change to minimal ligth theme" (click)="changeTheme('minimal-light-theme')"
+                [style.background]="currentTheme == 'minimal-light-theme' && '#eeeeee' || 'none'">
                 <mat-icon aria-label="Example icon-button with a heart icon" color="accent">palette</mat-icon>
             </button>
-            <button mat-icon-button matTooltip="Change to minimal dark theme" (click)="changeTheme('minimal-dark-theme')">
+            <button mat-icon-button matTooltip="Change to minimal dark theme" (click)="changeTheme('minimal-dark-theme')"
+                [style.background]="currentTheme == 'minimal-dark-theme' && '#333333' || 'none'">
                 <mat-icon aria-label="Example icon-button with a heart icon" color="warm">palette</mat-icon>
             </button>
             <button mat-button>

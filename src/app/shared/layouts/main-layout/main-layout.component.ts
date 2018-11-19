@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
-import { ThemingService } from '@app/core/services/index';
+import { ThemingService } from '@app/core/services/theming.service';
 
 @Component({
     selector: 'app-main-layout',

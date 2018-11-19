@@ -25,31 +25,3 @@ div.options-wrapper {
         }
     }
 }
-
-
-// Overwrite material design classes
-/deep/ .mat-tooltip {
-    font-size: .85rem;
-}
-
-/deep/ .mat-tab-label {
-    height: 64px !important;
-    font-size: 1rem;
-
-    &.mat-tab-label-active {
-        font-weight: 600;
-    }
-}
-
-/deep/ mat-header-cell {
-    font-size: 0.9rem !important;
-    font-weight: 600 !important;
-}
-
-/deep/ .mat-menu-content {
-    padding: 0 !important;
-
-    .mat-nav-list {
-        padding: 0 !important;
-    }
-}
