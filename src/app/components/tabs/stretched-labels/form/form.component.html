@@ -15,13 +15,15 @@
                     </mat-form-field>
 
                     <mat-form-field>
-                        <input matInput [matDatepicker]="startGame" placeholder="Start game">
+                        <input matInput [matDatepickerFilter]="filterPreviousDates" [matDatepicker]="startGame"
+                            placeholder="Start game">
                         <mat-datepicker-toggle matSuffix [for]="startGame"></mat-datepicker-toggle>
                         <mat-datepicker #startGame></mat-datepicker>
 
                     </mat-form-field>
                     <mat-form-field>
-                        <input matInput [matDatepicker]="endGame" placeholder="End game">
+                        <input matInput [matDatepickerFilter]="filterPreviousDates" [matDatepicker]="endGame"
+                            placeholder="End game">
                         <mat-datepicker-toggle matSuffix [for]="endGame"></mat-datepicker-toggle>
                         <mat-datepicker #endGame></mat-datepicker>
                     </mat-form-field>

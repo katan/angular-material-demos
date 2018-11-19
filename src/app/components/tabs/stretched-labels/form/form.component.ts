@@ -30,12 +30,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
     public isAdvancedMode: boolean;
+    public filterPreviousDates: any;
 
     constructor() {
         this.isAdvancedMode = false;
     }
 
     ngOnInit() {
-    }
+        this.filterPreviousDates = (date: Date): boolean => {
+            const now = new Date();
 
+            return date.getTime() >= new Date(now.getFullYear(), now.getUTCMonth(), now.getUTCDate()).getTime()
+        };
+    }
 }
