@@ -68,6 +68,7 @@ app-toolbar {
     }
 }
 
+// Sidenav accordion
 mat-accordion {
     &.navigation {
         mat-expansion-panel {
@@ -91,7 +92,11 @@ mat-accordion {
 
                 span {
                     align-items: center;
-                    flex: none;
+
+                    .mat-expansion-panel-header-description,
+                    .mat-expansion-panel-header-title {
+                        flex-grow: 0;
+                    }
                 }
 
                 mat-panel-description {

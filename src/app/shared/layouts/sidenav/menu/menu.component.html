@@ -1,6 +1,6 @@
 <mat-accordion class="navigation">
     <mat-expansion-panel *ngFor="let menu of menuItems; index as i" [expanded]="currentIndex === i" (opened)="setIndex(i)"
-        hideToggle>
+        [hideToggle]="!menu.submenu">
         <!-- Expansion title (Menu) -->
         <mat-expansion-panel-header>
             <mat-panel-title *ngIf="menu.icon">

@@ -12,23 +12,24 @@
             <!-- action icons -->
             <div class="actions">
                 <!--  -->
-                <button *ngIf="!isMobile" mat-button class="button" matTooltip="Add something">
+                <button *ngIf="!isMobile" mat-button class="button" matTooltip="Add something" color="primary">
                     <mat-icon aria-label="main toolbar logout icon">add_circle</mat-icon>
                 </button>
 
-                <button *ngIf="!isMobile" mat-button class="button" matTooltip="Refresh data table">
+                <button *ngIf="!isMobile" mat-button class="button" matTooltip="Refresh data table" color="primary">
                     <mat-icon aria-label="main toolbar logout icon">refresh</mat-icon>
                 </button>
 
-                <button *ngIf="!isMobile" mat-button class="button" matTooltip="Import data">
+                <button *ngIf="!isMobile" mat-button class="button" matTooltip="Import data" color="primary">
                     <mat-icon aria-label="main toolbar logout icon">cloud_upload</mat-icon>
                 </button>
 
-                <button *ngIf="!isMobile" (click)="exportToExcel('table')" mat-button class="button" matTooltip="Export data">
+                <button *ngIf="!isMobile" (click)="exportToExcel('table')" mat-button class="button" matTooltip="Export data"
+                    color="primary">
                     <mat-icon aria-label="main toolbar logout icon">cloud_download</mat-icon>
                 </button>
 
-                <button mat-button class="button" [matMenuTriggerFor]="options" matTooltip="more">
+                <button mat-button class="button" [matMenuTriggerFor]="options" matTooltip="more" color="primary">
                     <mat-icon aria-label="main toolbar logout icon">more_vert</mat-icon>
                 </button>
 
