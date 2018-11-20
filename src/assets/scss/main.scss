@@ -179,6 +179,13 @@ div.tab-group {
         }
     }
 
+    section {
+        border-radius: 5px;
+
+        &>div {
+            padding: 12px 32px 24px;
+        }
+    }
 }
 
 #breadcrumb-wrapper {
