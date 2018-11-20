@@ -84,7 +84,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 		MatListModule,
 		MatDialogModule,
 		MatMenuModule,
-		// End Materila
+		MatExpansionModule,
+		// End Material
 		PerfectScrollbarModule
 	],
 	exports: [

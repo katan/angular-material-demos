@@ -1,7 +1,7 @@
 <div class="content-wrapper">
     <div class="options-wrapper">
         <!-- Select language -->
-        <mat-form-field>
+        <mat-form-field class="filter">
             <mat-select placeholder="Select language" disableRipple>
                 <mat-option value="en">
                     <span>English</span>
@@ -56,11 +56,11 @@
         <div>
             <section>
                 <h3>General settings</h3>
-                <mat-form-field>
+                <mat-form-field class="block">
                     <textarea matInput placeholder="Game"></textarea>
                 </mat-form-field>
 
-                <mat-form-field>
+                <mat-form-field class="block">
                     <textarea matInput placeholder="Description"></textarea>
                 </mat-form-field>
 
@@ -73,7 +73,7 @@
         <div>
             <section>
                 <h3>Invitation email</h3>
-                <mat-form-field>
+                <mat-form-field class="block">
                     <textarea matInput placeholder="Subjet"></textarea>
                 </mat-form-field>
 
@@ -85,11 +85,11 @@
                     <app-html-editor idname="htmlEditorMsgInvitation" placeholder="Message for describing invitations on the App"></app-html-editor>
                 </p>
 
-                <mat-form-field>
+                <mat-form-field class="block">
                     <textarea matInput placeholder="Default message for invitations on the App"></textarea>
                 </mat-form-field>
 
-                <mat-form-field>
+                <mat-form-field class="block">
                     <input type="url" matInput placeholder="Terms and conditions link" />
                     <span matSuffix>url</span>
                 </mat-form-field>

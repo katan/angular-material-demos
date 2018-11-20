@@ -124,4 +124,39 @@ $body-1: mat-typography-level(1rem, 1.15rem, 500));
         border-top: 1px solid rgba(black, 0.12);
         background-color: map-get($app-footer, $app-theme-name);
     }
+
+    mat-accordion {
+        &.navigation {
+            mat-expansion-panel {
+                border-bottom: 1px solid mat-color(mat-palette($mat-grey), default, 0.25);
+
+                mat-expansion-panel-header {
+                    &.mat-expanded {
+                        background-color: mat-color(mat-palette($mat-primary), default, 0.85);
+
+                        mat-panel-title {
+                            color: white;
+                        }
+
+                        mat-panel-description {
+                            color: white;
+                        }
+                    }
+                }
+
+                .mat-expansion-panel-body {
+                    background-color: map-get($app-tab-section, $app-theme-name);
+
+                    mat-list {
+                        mat-list-item {
+                            &.active {
+                                color: #222;
+                                background-color: mat-color(mat-palette($mat-grey), default, 0.15);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

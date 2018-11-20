@@ -4,32 +4,23 @@ import { MenuRoute, MENU_ROUTES } from '@app/models/index';
 
 @Component({
     selector: 'app-menu',
-    templateUrl: './menu.component.html',
-    styleUrls: ['./menu.component.scss']
+    templateUrl: './menu.component.html'
 })
 export class MenuComponent {
-    public showMenu: string;
-    public activeSubmenu: string;
+    public active: string;
     public menuItems: MenuRoute[];
 
+    public currentIndex: number;
+
     constructor() {
-        this.showMenu = '';
         this.menuItems = MENU_ROUTES;
     }
 
-    public toggleMenu(element, hasSubmenu): void {
-        if (hasSubmenu) {
-            if (element === this.showMenu) {
-                this.activeSubmenu = '0';
-            } else {
-                this.activeSubmenu = element;
-            }
-        } else {
-            if (element === this.showMenu) {
-                this.showMenu = '0';
-            } else {
-                this.showMenu = element;
-            }
-        }
+    public setIndex(index: number): void {
+        this.currentIndex = index;
+    }
+
+    public toggleActive(element): void {
+        this.active = element;
     }
 }

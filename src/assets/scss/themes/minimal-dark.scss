@@ -59,6 +59,41 @@ $app-theme-name: 'dark';
     .angular-editor-wrapper {
         color: black;
     }
+
+    mat-accordion {
+        &.navigation {
+            mat-expansion-panel {
+                border-bottom: 1px solid mat-color(mat-palette($mat-grey), default, 0.33);
+
+                mat-expansion-panel-header {
+                    &.mat-expanded {
+                        background-color: mat-color(mat-palette($mat-light-blue), default, 0.85);
+
+                        mat-panel-title {
+                            color: white;
+                        }
+
+                        mat-panel-description {
+                            color: white;
+                        }
+                    }
+                }
+
+                .mat-expansion-panel-body {
+                    background-color: map-get($app-tab-header, $app-theme-name);
+
+                    mat-list {
+                        mat-list-item {
+                            &.active {
+                                color: #222;
+                                background-color: mat-color(mat-palette($mat-grey), default, 0.8);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 // End Overwrite

@@ -23,12 +23,13 @@ body {
     }
 }
 
+// Global Overwrite Material design
 .sidenav-container {
     height: 100%;
 }
 
 .sidenav {
-    width: 280px;
+    width: 260px;
 }
 
 mat-sidenav-content {
@@ -39,6 +40,10 @@ mat-toolbar {
     position: sticky;
     top: 0;
     z-index: 10;
+}
+
+mat-nav-list {
+    margin-top: 16px;
 }
 
 app-toolbar {
@@ -58,6 +63,91 @@ app-toolbar {
             mat-icon {
                 font-size: 1.6rem;
                 padding-right: 8px;
+            }
+        }
+    }
+}
+
+mat-accordion {
+    &.navigation {
+        mat-expansion-panel {
+            border-radius: 0 !important;
+
+            &:first-of-type {
+                border-radius: 0;
+            }
+
+            &.mat-expansion-panel-spacing {
+                margin: 0;
+            }
+
+            mat-expansion-panel-header {
+                padding: 4px 24px;
+
+                &.mat-expanded {
+                    max-height: 50px;
+                    border-radius: 0;
+                }
+
+                span {
+                    align-items: center;
+                    flex: none;
+                }
+
+                mat-panel-description {
+                    font-size: 1rem;
+                }
+
+            }
+
+            .mat-expansion-panel-body {
+                padding: 0;
+                border-radius: 0;
+
+                mat-list {
+                    padding-bottom: 8px;
+
+                    mat-list-item {
+                        .mat-list-item-content {
+                            padding-left: 64px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .mat-expansion-panel:not([class*='mat-elevation-z']) {
+            box-shadow: none;
+        }
+    }
+}
+
+/**
+ * Common options
+ */
+div.options-wrapper {
+    margin-bottom: 8px;
+
+    mat-form-field.filter {
+        width: 50%;
+        margin-left: 15px;
+
+        mat-icon {
+            font-size: 2.2rem;
+        }
+    }
+
+    div.actions {
+        margin-top: 4px;
+        float: right;
+
+        button[mat-button] {
+            line-height: 3rem;
+
+            mat-icon {
+                width: auto;
+                font-size: 2rem;
+                line-height: 1.5rem;
             }
         }
     }
@@ -103,4 +193,9 @@ div.tab-group {
 .ps__rail-y,
 .ps__rail-x {
     z-index: 999;
+}
+
+// Common classes
+.block {
+    display: block !important;
 }
