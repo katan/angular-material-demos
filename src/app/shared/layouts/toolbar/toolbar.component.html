@@ -3,7 +3,7 @@
     <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="onToggleMenu()">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
     </button>
-    <div *ngIf="hasBreadcrumb" id="breadcrumb-wrapper">
+    <div id="breadcrumb-wrapper" [style.display]="!hasBreadcrumb && 'none'">
         <app-breadcrumb></app-breadcrumb>
     </div>
 </div>
