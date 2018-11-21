@@ -51,7 +51,7 @@ export const MENU_ROUTES: MenuRoute[] = [
     },
     {
         path: 'tabs',
-        title: 'tabs',
+        title: 'Tabs',
         icon: 'tab',
         submenu: [
             {

@@ -1,0 +1,24 @@
+<div class="breadcrumb">
+    <div>
+        <mat-icon *ngIf="pageInfo.icon">{{ pageInfo.icon }}</mat-icon>
+        <span>{{ pageInfo.title }}</span>
+    </div>
+    <div>
+        <span>/</span>
+    </div>
+    <ng-template ngFor let-url [ngForOf]="pageInfo.urls" let-last="last">
+        <div class="breadcrumb-item" *ngIf="!last">
+            <span>
+                <a [routerLink]="url.url" class="underline text-themecolor-link">
+                    <u>{{url.title}}</u>
+                </a>
+            </span>
+        </div>
+        <div *ngIf="pageInfo.urls.lenght > 0 && last">
+            <span>/</span>
+        </div>
+        <div class="breadcrumb-item active" *ngIf="last">
+            <span>{{url.title}}</span>
+        </div>
+    </ng-template>
+</div>

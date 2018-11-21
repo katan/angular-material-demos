@@ -1,16 +1,21 @@
 import { Component, Input, EventEmitter } from '@angular/core';
 import { MatSidenav } from '@angular/material';
 
+import { AppSettings } from '@app/core/settings/index';
+
 @Component({
     selector: 'app-toolbar',
     templateUrl: './toolbar.component.html'
 })
 export class ToolbarComponent {
+    public hasBreadcrumb: boolean;
     private toggleMenu: boolean;
     @Input() toggleMenu$: EventEmitter<boolean> | boolean;
     @Input() sidenav: MatSidenav;
 
-    constructor() { }
+    constructor() {
+        this.hasBreadcrumb = AppSettings.hasBreadcrumb;
+    }
 
     onToggleMenu(): void {
         this.toggleMenu = !this.toggleMenu;

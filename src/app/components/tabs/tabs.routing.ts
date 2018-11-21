@@ -21,7 +21,14 @@ export const tabsRouting: Routes = [
             },
             {
                 path: 'stretched-labels',
-                component: StretchedLabelsComponent
+                component: StretchedLabelsComponent,
+                data: {
+                    title: 'Tabs',
+                    icon: 'tab',
+                    urls: [
+                        { title: 'Stretched-labels' }
+                    ]
+                }
             }
         ]
     }

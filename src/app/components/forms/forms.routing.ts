@@ -17,11 +17,25 @@ export const formsRouting: Routes = [
             },
             {
                 path: 'simple-form',
-                component: SimpleFormComponent
+                component: SimpleFormComponent,
+                data: {
+                    title: 'Forms',
+                    icon: 'text_fields',
+                    urls: [
+                        { title: 'Simple form' }
+                    ]
+                }
             },
             {
                 path: 'validation-form',
-                component: ValidationFormComponent
+                component: ValidationFormComponent,
+                data: {
+                    title: 'Forms',
+                    icon: 'text_fields',
+                    urls: [
+                        { title: 'Validation form' }
+                    ]
+                }
             }
         ]
     }

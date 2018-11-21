@@ -52,6 +52,9 @@ app-toolbar {
     justify-content: space-between;
 
     #toolbar-options {
+        display: flex;
+        align-items: center;
+
         div {
             display: inline-block;
         }
@@ -197,6 +200,21 @@ div.tab-group {
     margin-left: 8px;
     display: inline-block;
     vertical-align: middle;
+
+    .breadcrumb {
+        display: flex;
+        font-size: 1rem;
+
+        &>div,
+        mat-icon {
+            padding-right: 8px;
+        }
+
+        span,
+        mat-icon {
+            vertical-align: middle;
+        }
+    }
 }
 
 /**
@@ -210,4 +228,8 @@ div.tab-group {
 // Common classes
 .block {
     display: block !important;
+}
+
+.pointer {
+    cursor: pointer;
 }

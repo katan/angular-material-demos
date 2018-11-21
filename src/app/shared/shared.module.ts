@@ -62,6 +62,7 @@ import { LanguageDropdownComponent } from './layouts/toolbar/language-dropdown/l
 import { LogoutButtonComponent } from './layouts/toolbar/logout-button/logout-button.component';
 import { MenuComponent } from './layouts/sidenav/menu/menu.component';
 import { AssignToComponent } from './toasts/assign-to/assign-to.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 	suppressScrollX: true,
@@ -141,7 +142,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 		LanguageDropdownComponent,
 		LogoutButtonComponent,
 		MenuComponent,
-		AssignToComponent
+		AssignToComponent,
+		BreadcrumbComponent
 	],
 	entryComponents: [
 		DialogLogoutComponent,

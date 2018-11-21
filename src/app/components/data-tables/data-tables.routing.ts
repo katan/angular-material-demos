@@ -19,19 +19,47 @@ export const dataTablesRouting: Routes = [
             },
             {
                 path: 'simple-table',
-                component: SimpleTableComponent
+                component: SimpleTableComponent,
+                data: {
+                    title: 'Data tables',
+                    icon: 'table_chart',
+                    urls: [
+                        { title: 'Simple table' }
+                    ]
+                }
             },
             {
                 path: 'sort-table',
-                component: SortTableComponent
+                component: SortTableComponent,
+                data: {
+                    title: 'Data tables',
+                    icon: 'table_chart',
+                    urls: [
+                        { title: 'Sort table' }
+                    ]
+                }
             },
             {
                 path: 'pagination-table',
-                component: PaginationTableComponent
+                component: PaginationTableComponent,
+                data: {
+                    title: 'Data tables',
+                    icon: 'table_chart',
+                    urls: [
+                        { title: 'Pagination table' }
+                    ]
+                }
             },
             {
                 path: 'complete-table',
-                component: CompleteTableComponent
+                component: CompleteTableComponent,
+                data: {
+                    title: 'Data tables',
+                    icon: 'table_chart',
+                    urls: [
+                        { title: 'Complete table' }
+                    ]
+                }
             }
         ]
     }
