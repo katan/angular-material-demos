@@ -3,6 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatSort, MatPaginator, MatTableDataSource, MatSnackBar } from '@angular/material';
 
+import { saveAs } from 'file-saver';
+import * as XLSX from 'xlsx';
+
 import {
     ExcelHelper,
     DataTableHelper
@@ -64,7 +67,8 @@ export class DataTableComponent implements OnInit {
 
     public exportToExcel(name: string): void {
         if (this.selection.selected.length > 0) {
-            ExcelHelper.exportAsExcelFile(this.selection.selected, name);
+            const excelHelper = new ExcelHelper(XLSX, saveAs);
+            excelHelper.exportAsExcelFile(this.selection.selected, name);
         } else {
             // TODO: changes toast component
             this.toast.openFromComponent(AssignToComponent, {
