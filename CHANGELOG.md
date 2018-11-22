@@ -1,5 +1,25 @@
 # Change Log
 
+
+## [v0.0.2](https://github.com/katan/angular-material-demos/tree/v0.0.2) (2018-11-22)
+[Full Changelog](https://github.com/katan/angular-material-demos/compare/v0.0.1...v0.0.2)
+
+**Implemented enhancements:**
+
+- The XLSX module outside vendor.js [\#2](https://github.com/katan/angular-material-demos/issues/2)
+- Expande/Collpase the side menu when routing changes [\#4](https://github.com/katan/angular-material-demos/issues/4)
+- New feature: Adds a language service [\#5](https://github.com/katan/angular-material-demos/pull/5) ([katan](https://github.com/katan))
+
+**Closed issues:**
+
+- Breadcrumb doesn't execute at start [\#1](https://github.com/katan/angular-material-demos/issues/1)
+
+**Merged pull requests:**
+
+- Close \#5 [\#7](https://github.com/katan/angular-material-demos/pull/7) ([katan](https://github.com/katan))
+- New feature: Expands and selects the sidenav menu when the routing changes [\#6](https://github.com/katan/angular-material-demos/pull/6) ([katan](https://github.com/katan))
+- Remove the ngIf directive and replace to \[style.display\] [\#3](https://github.com/katan/angular-material-demos/pull/3) ([katan](https://github.com/katan))
+
 ## [v0.0.1](https://github.com/katan/angular-material-demos/tree/v0.0.1) (2018-11-21)
 
 
