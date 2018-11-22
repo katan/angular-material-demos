@@ -156,4 +156,14 @@ $body-1: mat-typography-level(1rem, 1.15rem, 500));
             }
         }
     }
+
+    // change color of buttons selects (like current language)
+    button.mat-menu-item {
+
+        &.selected,
+        &.selected:hover {
+            color: white;
+            background-color: mat-color(mat-palette($mat-primary));
+        }
+    }
 }

@@ -18,6 +18,10 @@ export const AppSettings = {
     spinner: { // TODO implement
         color: 'rgba(0, 115, 170, 0.69)'
     },
+    localStorage: {
+        language: 'language',
+        theme: 'theme'
+    },
     defaultTheme: 'default-theme',  // OK
     hasBreadcrumb: true             // OK
 
