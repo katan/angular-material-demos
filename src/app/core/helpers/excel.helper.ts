@@ -1,29 +1,36 @@
 import { Injectable } from '@angular/core';
-import { saveAs } from 'file-saver';
-import * as XLSX from 'xlsx';
 
 const EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
 const EXCEL_EXTENSION = '.xlsx';
 
 @Injectable()
 export class ExcelHelper {
+    private instance: ExcelHelper;
+    private XLSX;
+    private saveAs;
 
-    constructor() { }
-
-    public static exportAsExcelFile(json: any[], excelFileName: string): void {
-
-        const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(json);
-        const workbook: XLSX.WorkBook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
-        const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
-
-        ExcelHelper.saveAsExcelFile(excelBuffer, excelFileName);
+    constructor(XLSXModule, saveAsModule) {
+        if (!this.instance) {
+            this.XLSX = XLSXModule;
+            this.saveAs = saveAsModule;
+        }
+        return this;
     }
 
-    public static saveAsExcelFile(buffer: any, fileName: string): void {
+    public exportAsExcelFile(json: any[], excelFileName: string): void {
+
+        const worksheet = this.XLSX.utils.json_to_sheet(json);
+        const workbook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
+        const excelBuffer: any = this.XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+
+        this.saveAsExcelFile(excelBuffer, excelFileName);
+    }
+
+    public saveAsExcelFile(buffer: any, fileName: string): void {
         const data: Blob = new Blob([buffer], {
             type: EXCEL_TYPE
         });
-        saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
+        this.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
     }
 
 }
