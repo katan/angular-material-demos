@@ -138,4 +138,14 @@ $body-1: mat-typography-level(1rem, 1.15rem, 500));
         border-top: 1px solid rgba(black, 0.12);
         background-color: map-get($app-footer, $app-theme-name);
     }
+
+    // change color of buttons selects (like current language)
+    button.mat-menu-item {
+
+        &.selected,
+        &.selected:hover {
+            color: white;
+            background-color: mat-color(mat-palette($mat-light-blue), default, 0.85);
+        }
+    }
 }
