@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 import { MenuRoute, MENU_ROUTES } from '@app/models/index';
 
@@ -12,15 +13,37 @@ export class MenuComponent {
 
     public currentIndex: number;
 
-    constructor() {
+    constructor(private router: Router) {
         this.menuItems = MENU_ROUTES;
+
+        this.router.events.subscribe(
+            (event => {
+                if (event instanceof NavigationEnd) {
+                    // Expande the current menu
+                    const urlSplited: Array<string> = event.url.split('/').filter(value => value);
+                    this.currentIndex = this.menuItems.findIndex(element => {
+                        return element.path === urlSplited[0]
+                    })
+
+                    // Select de current submenu if exists
+                    if (this.menuItems[this.currentIndex]) {
+                        const activeSubmenu: MenuRoute[] = this.menuItems[this.currentIndex].submenu.filter(element => {
+                            return element.path === event.url;
+                        });
+                        if (activeSubmenu.length > 0) {
+                            this.toggleActive(activeSubmenu[0].path);
+                        }
+                    }
+                }
+            })
+        )
     }
 
     public setIndex(index: number): void {
         this.currentIndex = index;
     }
 
-    public toggleActive(element): void {
-        this.active = element;
+    public toggleActive(elementPath: string): void {
+        this.active = elementPath;
     }
 }
