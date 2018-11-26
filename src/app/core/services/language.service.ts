@@ -15,6 +15,10 @@ export class LanguageService {
         this.language$ = new BehaviorSubject<string>('');
     }
 
+    public getLanguages(): Array<any> {
+        return AppSettings.i18n;
+    }
+
     public getLanguage(): string {
         return this.language;
     }
@@ -23,5 +27,13 @@ export class LanguageService {
         this.language = language;
         this.language$.next(language);
         this.localStorage.set(AppSettings.localStorage.language, language);
+    }
+
+    public compare(languageA: string, languageB: string): boolean {
+        // Split the language code with "_" or "-" an compare only the first position of the array
+        const languageASplited: Array<string> = languageA.split(/-|_/);
+        const languageBSplited: Array<string> = languageB.split(/-|_/);
+
+        return languageASplited[0] === languageBSplited[0];
     }
 }

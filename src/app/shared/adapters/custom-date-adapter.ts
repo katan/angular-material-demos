@@ -7,8 +7,8 @@ import { LocalStorageService } from '@app/core/services/local-storage.service';
 // extend NativeDateAdapter's format method to specify the date format.
 export class CustomDateAdapter extends NativeDateAdapter {
 
-    constructor(platform: Platform, private localStorage: LocalStorageService) {
-        super('en-GB', platform); // Default
+    constructor(private localStorage: LocalStorageService) {
+        super('en-GB', new Platform()); // Default
 
         // Change locale from local storage if exists
         const locale = this.localStorage.get(AppSettings.localStorage.language);
@@ -41,5 +41,12 @@ export class CustomDateAdapter extends NativeDateAdapter {
                 return date.toDateString();
             }
         }
+    }
+
+    getFirstDayOfWeek(): number {
+        const language = AppSettings.i18n.find(
+            (element) => element.locale === this.locale
+        );
+        return language && language.firstDayOfWeek || 0;
     }
 }

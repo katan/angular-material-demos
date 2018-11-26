@@ -10,6 +10,7 @@ import { AppSettings } from '@app/core/settings/index';
     templateUrl: './language-dropdown.component.html'
 })
 export class LanguageDropdownComponent implements OnInit {
+    public availableLanguages: any[];
     public currentLanguage: string;
 
     constructor(
@@ -18,6 +19,8 @@ export class LanguageDropdownComponent implements OnInit {
     ) {
         // Adds the localStorage as default current language
         this.currentLanguage = this.localStorage.get(AppSettings.localStorage.language);
+        // Get available alnguages
+        this.availableLanguages = this.languageService.getLanguages();
     }
 
     ngOnInit() {
@@ -44,10 +47,6 @@ export class LanguageDropdownComponent implements OnInit {
         if (languageCode === this.currentLanguage) {
             return true;
         }
-        // Split the language code with "_" or "-" an compare only the first position of the array
-        const languageCodeSplited: Array<string> = languageCode.split(/-|_/);
-        const currentLanguageSplited: Array<string> = this.currentLanguage.split(/-|_/);
-
-        return languageCodeSplited[0] === currentLanguageSplited[0];
+        return this.languageService.compare(languageCode, this.currentLanguage);
     }
 }

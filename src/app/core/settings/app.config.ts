@@ -23,6 +23,28 @@ export const AppSettings = {
         theme: 'theme'
     },
     defaultTheme: 'default-theme',  // OK
-    hasBreadcrumb: true             // OK
-
+    hasBreadcrumb: true,            // OK
+    // Translations
+    i18n: [                         // OK
+        {
+            name: 'English',
+            locale: 'en-GB',
+            firstDayOfWeek: 0 // 0 Sunday, 1 Monday
+        },
+        {
+            name: 'Spanish',
+            locale: 'es-ES',
+            firstDayOfWeek: 1
+        },
+        {
+            name: 'French',
+            locale: 'fr-FR',
+            firstDayOfWeek: 1
+        },
+        {
+            name: 'Italian',
+            locale: 'it-IT',
+            firstDayOfWeek: 1
+        }
+    ]
 }

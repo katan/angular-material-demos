@@ -24,7 +24,6 @@ export class FormComponent implements OnInit {
         this.language.language$.subscribe(
             (locale) => {
                 if (locale) {
-                    console.log(locale);
                     this.dateAdapter.setLocale(locale);
                 }
             })

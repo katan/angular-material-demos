@@ -3,9 +3,8 @@
     <span class="name">Languages</span>
 </button>
 <mat-menu #languages="matMenu">
-    <button mat-menu-item (click)="changeLanguage('en-GB')" [class.selected]="isSelected('en-GB')">English</button>
-    <button mat-menu-item (click)="changeLanguage('es')" [class.selected]="isSelected('es')">Spanish</button>
-    <button mat-menu-item (click)="changeLanguage('fr')" [class.selected]="isSelected('fr')">French</button>
-    <button mat-menu-item (click)="changeLanguage('de')" [class.selected]="isSelected('de')">Deutch</button>
-    <button mat-menu-item (click)="changeLanguage('it')" [class.selected]="isSelected('it')">Italian</button>
+    <button mat-menu-item *ngFor="let language of availableLanguages" (click)="changeLanguage(language.locale)"
+        [class.selected]="isSelected(language.locale)">
+        {{ language.name }}
+    </button>
 </mat-menu>
