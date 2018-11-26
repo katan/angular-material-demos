@@ -16,24 +16,25 @@
         <!-- action icons -->
         <div class="actions">
             <!--  -->
-            <button *ngIf="!isMobile" mat-button class="button" matTooltip="Remove language">
+            <button *ngIf="!isMobile" mat-button class="button" matTooltip="Remove language" color="primary" (click)="removeLanguage('French')">
                 <mat-icon aria-label="main toolbar logout icon">delete</mat-icon>
             </button>
 
-            <button *ngIf="!isMobile" mat-button class="button" matTooltip="Mark as default language">
+            <button *ngIf="!isMobile" mat-button class="button" matTooltip="Mark as default language" color="primary">
                 <mat-icon aria-label="main toolbar logout icon">book</mat-icon>
             </button>
 
-            <button *ngIf="!isMobile" mat-button class="button" matTooltip="Paste the language options from default">
+            <button *ngIf="!isMobile" mat-button class="button" matTooltip="Paste the language options from default"
+                color="primary">
                 <mat-icon aria-label="main toolbar logout icon">assignment</mat-icon>
             </button>
 
-            <button *ngIf="isMobile" mat-button class="button" [matMenuTriggerFor]="options" matTooltip="more">
+            <button *ngIf="isMobile" mat-button class="button" [matMenuTriggerFor]="options" matTooltip="more" color="primary">
                 <mat-icon aria-label="main toolbar logout icon">more_vert</mat-icon>
             </button>
             <mat-menu class="mobile" #options="matMenu">
                 <mat-nav-list>
-                    <mat-list-item>
+                    <mat-list-item (click)="removeLanguage('French')">
                         <mat-icon aria-label="main toolbar logout icon">delete</mat-icon>
                         <span>Remove language</span>
                     </mat-list-item>

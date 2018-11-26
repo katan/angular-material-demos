@@ -1,46 +1,46 @@
 import { Component, OnInit } from '@angular/core';
+import { DateAdapter } from '@angular/material';
 
-// import { MomentDateAdapter } from '@angular/material-moment-adapter';
-// import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
-
-// export const MY_FORMATS = {
-//     parse: {
-//         dateInput: 'LL',
-//     },
-//     display: {
-//         dateInput: 'LL',
-//         monthYearLabel: 'MMM YYYY',
-//         dateA11yLabel: 'LL',
-//         monthYearA11yLabel: 'MMMM YYYY',
-//     },
-// };
+import { LanguageService } from '@app/core/services/language.service';
 
 @Component({
     selector: 'app-tabs-form',
     templateUrl: './form.component.html',
-    styleUrls: ['./form.component.scss'],
-    providers: [
-        // `MomentDateAdapter` can be automatically provided by importing `MomentDateModule` in your
-        // application's root module. We provide it at the component level here, due to limitations of
-        // our example generation script.
-        // { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
-
-        // { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
-    ]
+    styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
     public isAdvancedMode: boolean;
-    public filterPreviousDates: any;
+    public filterPreviousStartDates: any;
+    public filterPreviousEndDates: any;
 
-    constructor() {
+    constructor(private dateAdapter: DateAdapter<Date>, private language: LanguageService) {
         this.isAdvancedMode = false;
     }
 
     ngOnInit() {
-        this.filterPreviousDates = (date: Date): boolean => {
-            const now = new Date();
+        this.filterPreviousStartDates = this.filterDates(new Date());
+        this.filterPreviousEndDates = this.filterDates(new Date());
 
-            return date.getTime() >= new Date(now.getFullYear(), now.getUTCMonth(), now.getUTCDate()).getTime()
+        this.language.language$.subscribe(
+            (locale) => {
+                if (locale) {
+                    console.log(locale);
+                    this.dateAdapter.setLocale(locale);
+                }
+            })
+    }
+
+    public onDataStartChanges(startDate: Date): void {
+        // Adds 1 day to the current start date
+        const newDate: Date = new Date(startDate);
+        newDate.setDate(newDate.getDate() + 1);
+
+        this.filterPreviousEndDates = this.filterDates(newDate);
+    }
+
+    private filterDates(newDate: Date) {
+        return (date: Date): boolean => {
+            return date.getTime() >= new Date(newDate.getFullYear(), newDate.getUTCMonth(), newDate.getUTCDate()).getTime();
         };
     }
 }
