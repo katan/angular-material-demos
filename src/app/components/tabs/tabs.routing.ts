@@ -52,7 +52,7 @@ export const tabsRouting: Routes = [
     ],
     exports: [RouterModule],
     providers: [
-        { provide: DateAdapter, useClass: CustomDateAdapter, deps: [MAT_DATE_LOCALE, LocalStorageService] }
+        { provide: DateAdapter, useClass: CustomDateAdapter, deps: [LocalStorageService] }
     ]
 })
 
