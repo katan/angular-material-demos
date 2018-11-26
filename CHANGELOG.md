@@ -1,12 +1,25 @@
 # Change Log
 
+## [v0.0.3](https://github.com/katan/angular-material-demos/tree/v0.0.3) (2018-11-26)
+[Full Changelog](https://github.com/katan/angular-material-demos/compare/v0.0.2...v0.0.3)
+
+**Implemented enhancements:**
+
+- The XLSX module outside vendor.js [\#2](https://github.com/katan/angular-material-demos/issues/2)
+- Updates the last packages & README [\#8](https://github.com/katan/angular-material-demos/pull/8) ([katan](https://github.com/katan))
+
+**Merged pull requests:**
+
+- Hotfix production compile error [\#15](https://github.com/katan/angular-material-demos/pull/15) ([katan](https://github.com/katan))
+- Update packages [\#14](https://github.com/katan/angular-material-demos/pull/14) ([katan](https://github.com/katan))
+- Move compare languages to service [\#13](https://github.com/katan/angular-material-demos/pull/13) ([katan](https://github.com/katan))
+- Feature/custom date adapter [\#12](https://github.com/katan/angular-material-demos/pull/12) ([katan](https://github.com/katan))
 
 ## [v0.0.2](https://github.com/katan/angular-material-demos/tree/v0.0.2) (2018-11-22)
 [Full Changelog](https://github.com/katan/angular-material-demos/compare/v0.0.1...v0.0.2)
 
 **Implemented enhancements:**
 
-- The XLSX module outside vendor.js [\#2](https://github.com/katan/angular-material-demos/issues/2)
 - Expande/Collpase the side menu when routing changes [\#4](https://github.com/katan/angular-material-demos/issues/4)
 - New feature: Adds a language service [\#5](https://github.com/katan/angular-material-demos/pull/5) ([katan](https://github.com/katan))
 
