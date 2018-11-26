@@ -18,7 +18,7 @@
                         <mat-form-field class="block">
                             <input matInput [matDatepickerFilter]="filterPreviousStartDates" [matDatepicker]="startGame"
                                 (dateChange)="onDataStartChanges($event.value)" placeholder="Start game">
-                            <mat-datepicker-toggle matSuffix [for]="startGame" (click)="onDataStartClick()"></mat-datepicker-toggle>
+                            <mat-datepicker-toggle matSuffix [for]="startGame"></mat-datepicker-toggle>
                             <mat-datepicker #startGame></mat-datepicker>
 
                         </mat-form-field>
