@@ -9,7 +9,12 @@ export class CustomDateAdapter extends NativeDateAdapter {
 
     constructor(platform: Platform, private localStorage: LocalStorageService) {
         super('en-GB', platform); // Default
-        super.setLocale(this.localStorage.get(AppSettings.localStorage.language));
+
+        // Change locale from local storage if exists
+        const locale = this.localStorage.get(AppSettings.localStorage.language);
+        if (locale) {
+            super.setLocale(this.localStorage.get(AppSettings.localStorage.language));
+        }
     }
 
     format(date: Date, displayFormat: Object): string {
