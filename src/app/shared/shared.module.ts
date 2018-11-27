@@ -64,6 +64,7 @@ import { MenuComponent } from './layouts/sidenav/menu/menu.component';
 import { AssignToComponent } from './toasts/assign-to/assign-to.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { DialogRemoveItemComponent } from './dialogs/dialog-remove-item/dialog-remove-item.component';
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 	suppressScrollX: true,
@@ -145,7 +146,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 		MenuComponent,
 		AssignToComponent,
 		BreadcrumbComponent,
-		DialogRemoveItemComponent
+		DialogRemoveItemComponent,
+		AuthLayoutComponent
 	],
 	entryComponents: [
 		DialogLogoutComponent,
