@@ -3,9 +3,32 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Layouts
 import { MainLayoutComponent } from '@app/shared/layouts/index';
+import { AuthLayoutComponent } from '@app/shared/layouts/index';
 // Components
+import { LoginComponent } from '@app/components/login/login.component';
+import { PasswordRecoveryComponent } from '@app/components/password-recovery/password-recovery.component';
 
 const routes: Routes = [
+    {
+        path: '',
+        component: AuthLayoutComponent,
+        children: [
+            {
+                path: '',
+                redirectTo: '/login',
+                pathMatch: 'full'
+            },
+            {
+                path: 'login',
+                component: LoginComponent
+            },
+            {
+                path: 'password-recovery',
+                component: PasswordRecoveryComponent
+            }
+        ]
+    },
+    //
     {
         path: '',
         component: MainLayoutComponent,
@@ -13,7 +36,7 @@ const routes: Routes = [
             // Default
             {
                 path: '',
-                redirectTo: 'data-tables',
+                redirectTo: 'login',
                 pathMatch: 'full'
             },
             {   // Lazy load DataTables Module
@@ -32,7 +55,7 @@ const routes: Routes = [
     },
     {
         path: '**',
-        redirectTo: '/'
+        redirectTo: '/login'
     }
 ];
 

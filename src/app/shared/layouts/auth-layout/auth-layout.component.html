@@ -1,0 +1,20 @@
+<div id="auth-wrapper">
+    <mat-toolbar>
+        <!-- toolbar options -->
+        <app-toolbar [showAccount]="false" [showLanguage]="true" [showLogout]="false"></app-toolbar>
+    </mat-toolbar>
+
+    <div class="auth-content">
+        <div class="auth-card-wrapper">
+            <div class="auth-card-container">
+                <router-outlet>
+                    <!-- Add Content Here -->
+                    <ng-content></ng-content>
+                </router-outlet>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <app-footer></app-footer>
+</div>

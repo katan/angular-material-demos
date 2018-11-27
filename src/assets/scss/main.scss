@@ -161,6 +161,15 @@ div.options-wrapper {
     }
 }
 
+button.mat-menu-item {
+
+    &.selected,
+    &.selected:hover {
+        color: white;
+        background-color: mat-color(mat-palette($mat-light-blue), default, 0.85);
+    }
+}
+
 /**
  * Common tabs
  */
@@ -232,4 +241,51 @@ div.tab-group {
 
 .pointer {
     cursor: pointer;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+mat-icon {
+    &.x2 {
+        font-size: 2rem;
+    }
+
+    &.x3 {
+        font-size: 2.5rem;
+    }
+
+    &.x4 {
+        font-size: 3.5rem;
+    }
+
+    &.x5 {
+        font-size: 4rem;
+    }
+
+    &.x6 {
+        font-size: 5rem;
+    }
+}
+
+// Efects
+.animation-spin {
+    -webkit-animation: spin 1.15s linear infinite;
+    -moz-animation: spin 1.15s linear infinite;
+    animation: spin 1.15s linear infinite;
+}
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
 }

@@ -10,11 +10,15 @@ import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 // Spinner
 import { SpinnerComponent } from '@app/shared/spinner/spinner.component';
+import { LoginComponent } from './components/login/login.component';
+import { PasswordRecoveryComponent } from './components/password-recovery/password-recovery.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		SpinnerComponent
+		SpinnerComponent,
+		LoginComponent,
+		PasswordRecoveryComponent
 	],
 	imports: [
 		// Angular

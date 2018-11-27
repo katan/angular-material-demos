@@ -10,6 +10,10 @@ import { AppSettings } from '@app/core/settings/index';
 export class ToolbarComponent {
     public hasBreadcrumb: boolean;
     private toggleMenu: boolean;
+
+    @Input() showLanguage: boolean;
+    @Input() showAccount: boolean;
+    @Input() showLogout: boolean;
     @Input() toggleMenu$: EventEmitter<boolean> | boolean;
     @Input() sidenav: MatSidenav;
 

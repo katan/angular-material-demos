@@ -1,26 +1,28 @@
 <!-- toogle sidenav -->
 <div id="toolbar-menu">
-    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="onToggleMenu()">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-    </button>
-    <div id="breadcrumb-wrapper" [style.display]="!hasBreadcrumb && 'none'">
-        <app-breadcrumb></app-breadcrumb>
+    <div *ngIf="sidenav && toggleMenu$">
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="onToggleMenu()">
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <div id="breadcrumb-wrapper" [style.display]="!hasBreadcrumb && 'none'">
+            <app-breadcrumb></app-breadcrumb>
+        </div>
     </div>
 </div>
 
 <div id="toolbar-options">
     <!-- User Data -->
-    <div id="toolbar-languages">
+    <div *ngIf="showAccount" id="toolbar-languages">
         <app-account-card></app-account-card>
     </div>
 
     <!-- Languages -->
-    <div id="toolbar-languages">
+    <div *ngIf="showLanguage" id="toolbar-languages">
         <app-language-dropdown></app-language-dropdown>
     </div>
 
     <!-- logout -->
-    <div id="toolbar-logout">
+    <div *ngIf="showLogout" id="toolbar-logout">
         <app-logout-button></app-logout-button>
     </div>
 </div>
