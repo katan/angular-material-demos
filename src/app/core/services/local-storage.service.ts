@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { CommonHelper } from '@app/core/helpers/index';
+import { CommonHelper } from '@app/helpers/index';
 
 @Injectable({
 	providedIn: 'root'

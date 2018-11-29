@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material';
 
-import { DeviceHelper } from '@app/core/helpers/index';
+import { DeviceHelper } from '@app/helpers/index';
 import { DialogRemoveItemComponent } from '@app/shared/dialogs/index'
 
 @Component({

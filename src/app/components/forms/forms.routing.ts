@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { SharedModule } from '@app/shared/shared.module';
+import { AuthenticationGuard } from '@app/core/guards/index';
 // Components
 import { SimpleFormComponent } from '@app/components/forms/index';
 import { ValidationFormComponent } from './validation-form/validation-form.component';
@@ -9,6 +10,7 @@ import { ValidationFormComponent } from './validation-form/validation-form.compo
 export const formsRouting: Routes = [
     {
         path: '',
+        canActivate: [AuthenticationGuard],
         children: [
             {
                 path: '',

@@ -3,7 +3,7 @@ import { FormGroup } from '@angular/forms';
 
 import { LoggerService } from '@app/core/services/logger.service';
 
-import { FormControlHelper } from '@app/core/helpers/index';
+import { FormControlHelper } from '@app/helpers/index';
 import { passwordRecoveryValidation } from '@app/models/form-validations/index';
 
 @Component({
@@ -15,6 +15,7 @@ export class PasswordRecoveryComponent implements OnInit {
     public passwordRecoveryForm: FormGroup;
     public passwordRecoveryValidationModel: any;
     public waiting: boolean;
+    public loginErrorMsg: string;
 
     constructor(private logger: LoggerService) {
         this.passwordRecoveryValidationModel = passwordRecoveryValidation;

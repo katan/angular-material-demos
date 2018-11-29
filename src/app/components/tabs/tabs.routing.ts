@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MAT_DATE_LOCALE, DateAdapter } from '@angular/material';
+import { DateAdapter } from '@angular/material';
 
 import { SharedModule } from '@app/shared/shared.module';
+import { AuthenticationGuard } from '@app/core/guards/index';
 import { CustomDateAdapter } from '@app/shared/adapters/index';
 // Components
 import { HtmlEditorComponent } from '@app/shared/html-editor/html-editor.component';
@@ -16,6 +17,7 @@ import { LocalStorageService } from '@app/core/services/local-storage.service';
 export const tabsRouting: Routes = [
     {
         path: '',
+        canActivate: [AuthenticationGuard],
         children: [
             {
                 path: '',

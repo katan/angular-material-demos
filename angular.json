@@ -48,17 +48,24 @@
                             "buildOptimizer": true,
                             "budgets": [{
                                     "type": "bundle",
-                                    "name": "VENDOR",
-                                    "baseline": "768kb",
+                                    "name": "vendor",
+                                    "baseline": "896Kb",
                                     "maximumWarning": "64kb",
                                     "maximumError": "128kb"
                                 },
                                 {
-                                    "type": "initial",
-                                    "name": "START",
-                                    "baseline": "1280kb",
-                                    "maximumWarning": "64kb",
-                                    "maximumError": "128kb"
+                                    "type": "bundle",
+                                    "name": "main",
+                                    "baseline": "80Kb",
+                                    "maximumWarning": "8kb",
+                                    "maximumError": "16kb"
+                                },
+                                {
+                                    "type": "bundle",
+                                    "name": "polyfills",
+                                    "baseline": "50kb",
+                                    "maximumWarning": "10kb",
+                                    "maximumError": "20kb"
                                 }
                             ]
                         }

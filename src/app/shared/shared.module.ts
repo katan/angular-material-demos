@@ -1,6 +1,6 @@
 // Angular modules
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -40,7 +40,8 @@ import {
 	// Data table
 	MatTableModule,
 	MatSortModule,          // Sort tables
-	MatPaginatorModule
+	MatPaginatorModule,
+	MatDialog
 } from '@angular/material';
 
 import { PerfectScrollbarModule, PerfectScrollbarConfigInterface, PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
@@ -65,6 +66,10 @@ import { AssignToComponent } from './toasts/assign-to/assign-to.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { DialogRemoveItemComponent } from './dialogs/dialog-remove-item/dialog-remove-item.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { AuthenticationGuard } from '@app/core/guards';
+import { AuthService } from '@app/core/services/auth.service';
+import { LoggerService } from '@app/core/services/logger.service';
+import { DialogUnauthorizeComponent } from './dialogs/dialog-unauthorize/dialog-unauthorize.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 	suppressScrollX: true,
@@ -147,14 +152,22 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 		AssignToComponent,
 		BreadcrumbComponent,
 		DialogRemoveItemComponent,
-		AuthLayoutComponent
+		AuthLayoutComponent,
+		DialogUnauthorizeComponent
 	],
 	entryComponents: [
 		DialogLogoutComponent,
 		DialogRemoveItemComponent,
+		DialogUnauthorizeComponent,
 		AssignToComponent
 	],
 	providers: [
+		// GUARDS
+		{
+			provide: AuthenticationGuard,
+			useClass: AuthenticationGuard,
+			deps: [Router, MatDialog, AuthService, LoggerService]
+		},
 		// scrollbar
 		{
 			provide: PERFECT_SCROLLBAR_CONFIG,

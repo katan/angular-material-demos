@@ -4,7 +4,7 @@ import { LanguageService } from '@app/core/services/language.service';
 import { LocalStorageService } from '@app/core/services/local-storage.service';
 
 import { AppSettings } from '@app/core/settings/index';
-import { NavigatorHelper } from '@app/core/helpers/index';
+import { NavigatorHelper } from '@app/helpers/index';
 
 @Component({
     selector: 'app-root',

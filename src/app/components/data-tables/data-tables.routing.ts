@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { SharedModule } from '@app/shared/shared.module';
+import { AuthenticationGuard } from '@app/core/guards/index';
 // Components
 import { SimpleTableComponent } from '@app/components/data-tables/index';
 import { SortTableComponent } from '@app/components/data-tables/index';
@@ -11,6 +12,7 @@ import { CompleteTableComponent } from '@app/components/data-tables/index';
 export const dataTablesRouting: Routes = [
     {
         path: '',
+        canActivate: [AuthenticationGuard],
         children: [
             {
                 path: '',

@@ -8,11 +8,11 @@ import * as XLSX from 'xlsx';
 
 import {
     ExcelHelper,
-    DataTableHelper
-} from '@app/core/helpers/index';
+    DeviceHelper,
+    DataTableHelper,
+} from '@app/helpers/index';
 
 import { Ingredient } from '@app/models/index';
-import { DeviceHelper } from '@app/core/helpers/index';
 import { AssignToComponent } from '@app/shared/toasts/index';
 
 @Component({
